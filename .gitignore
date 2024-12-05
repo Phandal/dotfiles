@@ -1,0 +1,31 @@
+# general
+**/.DS_Store
+
+# emacs
+emacs/.config/emacs/*~
+emacs/.config/emacs/auto-save-list/
+emacs/.config/emacs/eln-cache/
+emacs/.config/emacs/projects
+emacs/.config/emacs/tree-sitter/
+emacs/.config/emacs/elpa/
+emacs/.config/emacs/transient/
+emacs/.config/emacs/tramp
+emacs/.config/emacs/server/*
+emacs/.config/emacs/.lsp-session-v1
+emacs/.config/emacs/bookmarks
+emacs/.config/emacs/url
+emacs/.config/emacs/.cache
+emacs/.config/emacs/eclipse.jdt.ls
+emacs/.config/emacs/workspace
+emacs/.config/emacs/.dap-breakpoints
+
+# vim
+vim/.vim/.netrwhist
+
+# zsh
+zsh/.config/zsh/plugins/
+zsh/.config/zsh/.zsh_history
+zsh/.config/zsh/zsh_history
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zsh_sessions/
+zsh/.config/zsh/.zprofile

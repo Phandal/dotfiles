@@ -1,0 +1,20 @@
+zsh_plug () {
+  FILE=$(echo $1 | cut -d/ -f2)
+
+  if [ -f $ZDOTDIR/plugins/$FILE/$FILE.zsh ]
+  then
+    source $ZDOTDIR/plugins/$FILE/$FILE.zsh
+  else
+    git clone https://github.com/$1 $ZDOTDIR/plugins/$FILE
+    if [ -f $ZDOTDIR/plugins/$FILE/$FILE.zsh ]
+    then
+      source $ZDOTDIR/plugins/$FILE/$FILE.zsh
+    else
+      if [ -f $ZDOTDIR/plugins/$FILE/$FILE.plugin.zsh ]
+      then
+        mv $ZDOTDIR/plugins/$FILE/$FILE.plugin.zsh $ZDOTDIR/plugins/$FILE/$FILE.zsh
+        source $ZDOTDIR/plugins/$FILE/$FILE.zsh
+      fi
+    fi
+  fi
+}

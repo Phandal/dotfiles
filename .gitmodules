@@ -1,0 +1,6 @@
+[submodule "vim/.vim/pack/git_plugins/start/fzf.vim"]
+	path = vim/.vim/pack/git_plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "emacs/.config/emacs/everforest-theme"]
+	path = emacs/.config/emacs/everforest-theme
+	url = https://github.com/Theory-of-Everything/everforest-emacs.git

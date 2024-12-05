@@ -1,0 +1,4 @@
+# Plugins
+zsh_plug zsh-users/zsh-autosuggestions
+zsh_plug agkozak/zsh-z
+zsh_plug zsh-users/zsh-syntax-highlighting

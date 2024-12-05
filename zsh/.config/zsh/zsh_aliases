@@ -1,0 +1,28 @@
+alias ls="eza -a --icons --group-directories-first"
+alias ll="eza -ll --icons --group-directories-first"
+alias grep="grep --color=auto"
+
+alias cp="cp -i"
+alias rm="rm -i"
+alias mv="mv -i"
+alias n="nvim"
+
+alias ga="git add"
+alias gs="git status"
+alias gc="git checkout \$(git branch -a | fzf)"
+alias gcm="git commit"
+alias gd="git diff"
+alias gdt="git difftool"
+alias gl="git log --oneline"
+alias gw="git worktree"
+
+if ! command -v bat &> /dev/null
+then
+  alias cat="batcat"
+else
+  alias cat="bat"
+fi
+
+alias webcam="mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0"
+
+alias scdeploy="suitecloud project:deploy"

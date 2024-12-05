@@ -1,0 +1,2 @@
+setopt PROMPT_SUBST
+PS1='%B%(?.%F{green}.%F{red})%(!.#.>)%f %F{green}%0~%f%F{green}${vcs_info_msg_0_}%f%b '
