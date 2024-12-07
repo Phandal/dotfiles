@@ -1,0 +1,6 @@
+#+TITLE: README
+#+AUTHOR: Bailey Feldewerd
+
+My emacs config without packages. Just the defaults and builtin packages.
+
+*Use at your own risk*
