@@ -3,40 +3,36 @@ local lspconfig = require('lspconfig');
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist, opts)
 
 -- Setup capabilities for nvim-cmp
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', { buf = bufnr })
-  vim.api.nvim_set_option_value('tagfunc', 'v:lua.vim.lsp.tagfunc', { buf = bufnr })
-  vim.api.nvim_set_option_value('formatexpr', 'v:lua.vim.lsp.formatexpr', { buf = bufnr })
-
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'grD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'grd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gri', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
+  vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', 'gwa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', 'gwr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', 'gwl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<space>gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', 'grn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'grr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>F', vim.lsp.buf.format, bufopts)
+  vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, bufopts)
 
   -- AutoCommands
   if client.server_capabilities.documentHighlightProvider then
@@ -66,7 +62,7 @@ require("neodev").setup({
   lspconfig = {
     cmd = { "lua-language-server" },
     on_attach = on_attach,
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150
@@ -97,7 +93,7 @@ require("neodev").setup({
 -- Apex Language Server
 lspconfig['apex_ls'].setup {
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -110,7 +106,7 @@ lspconfig['apex_ls'].setup {
 
 lspconfig['denols'].setup {
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -120,7 +116,7 @@ lspconfig['denols'].setup {
 
 lspconfig['ts_ls'].setup {
   on_attach = on_attach,
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -148,7 +144,7 @@ local servers = {
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
