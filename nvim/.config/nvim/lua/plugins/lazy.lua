@@ -27,13 +27,9 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim',                 -- Fuzzy Finder
     dependencies = { 'nvim-lua/plenary.nvim' }       -- Dependency Plugin
   },
-  -- {
-  --   'ibhagwan/fzf-lua',                              -- Fuzzy Finder
-  --   dependencies = { 'nvim-tree/nvim-web-devicons' } -- Dependency Plugin
-  -- },
-  'lewis6991/gitsigns.nvim',           -- Git integration
+  'lewis6991/gitsigns.nvim',                         -- Git integration
   {
-    'nvim-treesitter/nvim-treesitter', -- Syntax highlighting using TreeSitter
+    'nvim-treesitter/nvim-treesitter',               -- Syntax highlighting using TreeSitter
     run = ':TSUpdate'
   },
   'windwp/nvim-autopairs',               -- Automatically adds closing bracket

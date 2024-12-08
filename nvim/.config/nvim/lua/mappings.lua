@@ -46,18 +46,6 @@ set_key("n", "<Leader>ld", [[<CMD>lua require("telescope.builtin").lsp_definitio
 set_key("n", "<Leader>lr", [[<CMD>lua require("telescope.builtin").lsp_references()<CR>]], key_opts)
 set_key("n", "<Leader>lp", [[<CMD>lua require("telescope.builtin").diagnostics()<CR>]], key_opts)
 
--- FzfLua specific
--- set_key("n", "<Leader>bs", [[<CMD>lua require("fzf-lua").grep_curbuf()<CR>]], key_opts)
--- set_key("n", "<Leader>ff", [[<CMD>lua require("fzf-lua").files()<CR>]], key_opts)
--- set_key("n", "<Leader>fg", [[<CMD>lua require("fzf-lua").live_grep()<CR>]], key_opts)
--- set_key("n", "<Leader>fb", [[<CMD>lua require("fzf-lua").buffers()<CR>]], key_opts)
--- set_key("n", "<Leader>fh", [[<CMD>lua require("fzf-lua").helptags()<CR>]], key_opts)
--- set_key("n", "<Leader>ls", [[<CMD>lua require("fzf-lua").git_status()<CR>]], key_opts)
--- set_key("n", "<Leader>lt", [[<CMD>lua require("fzf-lua").lsp_document_symbols()<CR>]], key_opts)
--- set_key("n", "<Leader>li", [[<CMD>lua require("fzf-lua").lsp_implementations()<CR>]], key_opts)
--- set_key("n", "<Leader>ld", [[<CMD>lua require("fzf-lua").lsp_definitions()<CR>]], key_opts)
--- set_key("n", "<Leader>lr", [[<CMD>lua require("fzf-lua").lsp_references()<CR>]], key_opts)
-
 -- Suitecloud specific
 set_key("n", "<Leader>sd", [[<CMD>Suitecloud deploy<CR>]], key_opts)
 set_key("n", "<Leader>sp", [[<CMD>Suitecloud preview<CR>]], key_opts)

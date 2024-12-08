@@ -61,8 +61,6 @@ autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" }
 autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 
 -- Custom Commands
-usercmd('Deploy', '!suitecloud project:deploy', {})
-usercmd('Preview', '!suitecloud project:deploy --dryrun', {})
 
 -- Neovide
 if vim.g.neovide then
