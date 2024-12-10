@@ -43,13 +43,16 @@ set wildignorecase
 
 " Turning Things Off
 set nobackup
-set noshowmode
+" set noshowmode
 set nowrap
 
 " Settings
 let mapleader=" "
 syntax enable
 filetype plugin indent on
+
+" Optional Plugins
+packadd! comment
 
 " Color Scheme Specific
 let g:nord_bold = 1
