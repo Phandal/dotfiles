@@ -106,6 +106,8 @@ nnoremap <Leader>fb <CMD>Buffers<CR>
 nnoremap <Leader>fh <CMD>Help<CR>
 nnoremap <Leader>j <CMD>cnext<CR>
 nnoremap <Leader>k <CMD>cprev<CR>
+nnoremap <Leader>qo <CMD>copen<CR>
+nnoremap <Leader>qc <CMD>cclose<CR>
 
 " Commands
 
