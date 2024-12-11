@@ -27,10 +27,14 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim',                 -- Fuzzy Finder
     dependencies = { 'nvim-lua/plenary.nvim' }       -- Dependency Plugin
   },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make'
+  },
   'lewis6991/gitsigns.nvim',                         -- Git integration
   {
     'nvim-treesitter/nvim-treesitter',               -- Syntax highlighting using TreeSitter
-    run = ':TSUpdate'
+    build = ':TSUpdate'
   },
   'windwp/nvim-autopairs',               -- Automatically adds closing bracket
   'lukas-reineke/indent-blankline.nvim', -- Shows a symbol for indents
@@ -46,7 +50,7 @@ require('lazy').setup({
   {
     'L3MON4D3/LuaSnip',                  -- Snippet Plugin
     lazy = false,
-    run = 'make install_jsregexp',
+    build = 'make install_jsregexp',
     dependencies = { 'saadparwaiz1/cmp_luasnip' } -- Completion Plugin to show snippets
   },
   'nanotee/luv-vimdocs',                          -- libuv docs in Neovim

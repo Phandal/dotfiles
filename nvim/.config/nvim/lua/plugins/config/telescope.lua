@@ -47,5 +47,8 @@ require('telescope').setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    fzf = {}
   }
 }
+
+require('telescope').load_extension('fzf')
