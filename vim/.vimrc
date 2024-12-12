@@ -1,12 +1,13 @@
 " Make sure the defaults loaded
 source $VIMRUNTIME/defaults.vim
 
-" Turning Things On
-set autowrite
+" Turning Things On/Off
 set autoread
+set autowrite
 set background=dark
+set nobackup
 set clipboard=unnamedplus
-set completeopt=menuone,preview
+set completeopt=menuone,noselect,noinsert,preview
 set cursorline
 set expandtab
 set fillchars=eob:\ ,vert:│
@@ -26,8 +27,10 @@ set omnifunc=syntaxcomplete#Complete
 set path+=**
 set regexpengine=0
 set relativenumber
+set shiftround
 set shiftwidth=2
 set shortmess=filnxtToOFc
+set showmode
 set signcolumn=yes
 set smartcase
 set smartindent
@@ -37,17 +40,14 @@ set tabstop=2
 set termguicolors
 set ttimeoutlen=50
 set updatetime=300
+set wildignorecase
 set wildmenu
 set wildoptions=fuzzy,pum
-set wildignorecase
-
-" Turning Things Off
-set nobackup
-" set noshowmode
 set nowrap
 
 " Settings
 let mapleader=" "
+let localleader="\\"
 syntax enable
 filetype plugin indent on
 

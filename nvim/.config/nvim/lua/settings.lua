@@ -5,42 +5,45 @@ local usercmd = vim.api.nvim_create_user_command
 
 -- Options
 opt.autowrite = true
-opt.syntax = "on"
-opt.number = true
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.showmode = false
-opt.mouse = "a"
-opt.clipboard = "unnamedplus"
-opt.wrap = false
-opt.splitright = true
-opt.splitbelow = true
-opt.hidden = true
-opt.backup = false
-opt.updatetime = 300
-opt.shortmess = "filnxtToOFc"
-opt.signcolumn = "yes"
-opt.termguicolors = true
-opt.ignorecase = true
-opt.completeopt = "menuone,noselect,noinsert,preview"
 opt.background = "dark"
-opt.laststatus = 3
-opt.fillchars = { eob = " ", vert = "│" }
+opt.backup = false
+opt.clipboard = "unnamedplus"
+opt.completeopt = "menuone,noselect,noinsert,preview"
 opt.cursorline = true
-opt.list = true
--- opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
-opt.listchars = opt.listchars + 'trail:·, tab:  '
-opt.relativenumber = true
-opt.guicursor =
-"n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
-opt.shiftround = true
-opt.smartcase = true
+opt.expandtab = true
+opt.fillchars = { eob = " ", vert = "│" }
 opt.grepprg = "rg --vimgrep"
-opt.path = opt.path + "**"
-opt.wildmenu = true
-opt.wildignorecase = true
+opt.guicursor =
+  "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
+opt.hidden = true
+opt.hlsearch = true
+opt.ignorecase = true
 opt.inccommand = 'split'
+opt.incsearch = true
+opt.laststatus = 3
+opt.list = true
+opt.listchars = opt.listchars + 'trail:·, tab:  '
+-- opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
+opt.mouse = "a"
+opt.number = true
+opt.path = opt.path + "**"
+opt.relativenumber = true
+opt.shiftround = true
+opt.shiftwidth = 2
+opt.shortmess = "filnxtToOFc"
+opt.showmode = false
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.splitbelow = true
+opt.splitright = true
+opt.syntax = "on"
+opt.tabstop = 2
+opt.termguicolors = true
+opt.updatetime = 300
+opt.wildignorecase = true
+opt.wildmenu = true
+opt.wildoptions = "fuzzy,pum"
+opt.wrap = false
 
 -- Global variables
 g.mapleader = " "
