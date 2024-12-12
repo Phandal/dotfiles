@@ -99,15 +99,32 @@ function StatusLineMode()
 endfunction
 
 " KeyMaps
-nnoremap <C-n> <CMD>20Lexplore<CR>
+"   General
 nnoremap <f5> <CMD>call SwapBackground()<CR>
-nnoremap <Leader>ff <CMD>Files<CR>
-nnoremap <Leader>fb <CMD>Buffers<CR>
-nnoremap <Leader>fh <CMD>Help<CR>
+nnoremap <ESC> <CMD>nohlsearch<CR>
+
+"   Terminal Mode Specific
+nnoremap <Leader>tt <CMD>10sp<CR><CMD>term<CR>
+nnoremap <Leader>tv <CMD>vs<CR><CMD>term<CR>
+
+"   Quickfix List Specific
 nnoremap <Leader>j <CMD>cnext<CR>
 nnoremap <Leader>k <CMD>cprev<CR>
 nnoremap <Leader>qo <CMD>copen<CR>
 nnoremap <Leader>qc <CMD>cclose<CR>
+
+
+"   Location List Specific
+nnoremap <LocalLeader>j <CMD>lnext<CR>
+nnoremap <LocalLeader>k <CMD>lprev<CR>
+
+"   File Tree
+nnoremap <C-n> <CMD>20Lexplore<CR>
+
+"   FZF
+nnoremap <Leader>ff <CMD>Files<CR>
+nnoremap <Leader>fb <CMD>Buffers<CR>
+nnoremap <Leader>fh <CMD>Help<CR>
 
 " Commands
 
