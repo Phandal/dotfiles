@@ -14,7 +14,7 @@ opt.expandtab = true
 opt.fillchars = { eob = " ", vert = "│" }
 opt.grepprg = "rg --vimgrep"
 opt.guicursor =
-  "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
+"n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
 opt.hidden = true
 opt.hlsearch = true
 opt.ignorecase = true
@@ -48,6 +48,10 @@ opt.wrap = false
 -- Global variables
 g.mapleader = " "
 g.maplocalleader = [[\]]
+
+-- File Browser Specific
+g.netrw_banner = 0
+g.netrw_liststyle = 3
 
 -- Custom Highlights
 -- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { link = "Cursorline" })

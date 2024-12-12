@@ -25,13 +25,16 @@ set_key("n", "<Leader>tv", [[<CMD>vs<CR><CMD>term<CR>]], key_opts)
 -- Quickfix specific
 set_key("n", "<Leader>j", [[<CMD>cnext<CR>]], key_opts)
 set_key("n", "<Leader>k", [[<CMD>cprev<CR>]], key_opts)
+set_key("n", "<Leader>qo", [[<CMD>copen<CR>]], key_opts)
+set_key("n", "<Leader>qc", [[<CMD>cclose<CR>]], key_opts)
 
 -- LocList specific
 set_key("n", "<LocalLeader>j", [[<CMD>lnext<CR>]], key_opts)
 set_key("n", "<LocalLeader>k", [[<CMD>lprev<CR>]], key_opts)
 
--- NvimTree specific
-set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
+-- FileTree specific
+set_key("n", "<C-n>", [[<CMD>20Lexplore<CR>]], key_opts)
+-- set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 
 -- Telescope specific
 set_key("n", "<Leader>bs", [[<CMD>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>]], key_opts)
