@@ -33,7 +33,8 @@ set_key("n", "<LocalLeader>j", [[<CMD>lnext<CR>]], key_opts)
 set_key("n", "<LocalLeader>k", [[<CMD>lprev<CR>]], key_opts)
 
 -- FileTree specific
-set_key("n", "<C-n>", [[<CMD>20Lexplore<CR>]], key_opts)
+set_key("n", "<C-n>", [[<CMD>Explore<CR>]], key_opts)
+-- set_key("n", "<C-n>", [[<CMD>20Lexplore<CR>]], key_opts)
 -- set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 
 -- Telescope specific

@@ -50,8 +50,9 @@ g.mapleader = " "
 g.maplocalleader = [[\]]
 
 -- File Browser Specific
-g.netrw_banner = 0
-g.netrw_liststyle = 3
+g.netrw_banner = 1
+g.netrw_liststyle = 0
+-- g.netrw_browse_split = 4
 
 -- Custom Highlights
 -- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { link = "Cursorline" })

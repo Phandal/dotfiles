@@ -132,7 +132,7 @@ local servers = {
   'gopls',
   'lua_ls',
   'clangd',
-  'tailwindcss',
+  -- 'tailwindcss',
   'html',
   'eslint',
   'pyright',
