@@ -63,8 +63,8 @@ let g:nord_underline = 1
 colorscheme everforest
 
 " File Browser Specific
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+let g:netrw_banner = 1
+let g:netrw_liststyle = 0
 
 " Functions
 function SwapBackground()
@@ -119,7 +119,8 @@ nnoremap <LocalLeader>j <CMD>lnext<CR>
 nnoremap <LocalLeader>k <CMD>lprev<CR>
 
 "   File Tree
-nnoremap <C-n> <CMD>20Lexplore<CR>
+" nnoremap <C-n> <CMD>20Lexplore<CR>
+nnoremap <C-n> <CMD>Explore<CR>
 
 "   FZF
 nnoremap <Leader>ff <CMD>Files<CR>
