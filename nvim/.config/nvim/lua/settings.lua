@@ -63,10 +63,21 @@ g.netrw_liststyle = 0
 -- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { link = "Folded" })
 
 -- Autocommands
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false" })
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.relativenumber = false" })
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" })
-autocmd("TermOpen", { pattern = "*", command = "startinsert" })
+local ph_term_augroup = vim.api.nvim_create_augroup("PH_TERM", { clear = true })
+autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.number = false" })
+autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.relativenumber = false" })
+autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.signcolumn = 'no'" })
+autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "startinsert" })
+
+local ph_preview_augroup = vim.api.nvim_create_augroup("PH_PREVIEW", { clear = true })
+autocmd("BufWinEnter",
+  {
+    pattern = "*",
+    group = ph_preview_augroup,
+    command =
+    "lua if vim.wo.previewwindow then vim.wo.wrap = true; vim.wo.linebreak = true end"
+  })
+autocmd("CompleteDone", { pattern = "*", group = ph_preview_augroup, command = "pclose" })
 
 -- Custom Commands
 

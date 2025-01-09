@@ -35,18 +35,23 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, bufopts)
 
   -- AutoCommands
+  local ph_lsp_augroup = vim.api.nvim_create_augroup("PH_LSP", { clear = true })
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_autocmd("CursorHold", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
-    vim.api.nvim_create_autocmd("CursorHoldI", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
-    vim.api.nvim_create_autocmd("CursorMoved", { pattern = "<buffer>", command = "lua vim.lsp.buf.clear_references()" })
+    vim.api.nvim_create_autocmd("CursorHold",
+      { pattern = "<buffer>", group = ph_lsp_augroup, command = "lua vim.lsp.buf.document_highlight()" })
+    vim.api.nvim_create_autocmd("CursorHoldI",
+      { pattern = "<buffer>", group = ph_lsp_augroup, command = "lua vim.lsp.buf.document_highlight()" })
+    vim.api.nvim_create_autocmd("CursorMoved",
+      { pattern = "<buffer>", group = ph_lsp_augroup, command = "lua vim.lsp.buf.clear_references()" })
   end
 
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", { buffer = bufnr, command = "lua vim.lsp.buf.format()" });
+    vim.api.nvim_create_autocmd("BufWritePre",
+      { buffer = bufnr, group = ph_lsp_augroup, command = "lua vim.lsp.buf.format()" });
   end
 
   if client.name == 'eslint' then
-    vim.api.nvim_create_autocmd("BufWritePre", { buffer = bufnr, command = "EslintFixAll" })
+    vim.api.nvim_create_autocmd("BufWritePre", { buffer = bufnr, group = ph_lsp_augroup, command = "EslintFixAll" })
   end
 end
 
