@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, bufopts)
 
   -- AutoCommands
-  local ph_lsp_augroup = vim.api.nvim_create_augroup("PH_LSP", { clear = true })
+  local ph_lsp_augroup = vim.api.nvim_create_augroup("PH_LSP", { clear = false })
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_create_autocmd("CursorHold",
       { pattern = "<buffer>", group = ph_lsp_augroup, command = "lua vim.lsp.buf.document_highlight()" })
