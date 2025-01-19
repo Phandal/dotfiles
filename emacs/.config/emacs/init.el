@@ -120,7 +120,8 @@
 (package-install 'gruvbox-theme)
 (package-install 'ef-themes)
 ;; (load-theme 'ef-elea-dark t nil)
-(load-theme 'everforest-hard-dark t nil)
+;; (load-theme 'everforest-hard-dark t nil)
+(load-theme 'everforest-hard-light t nil)
 
 (package-install 'helpful)
 (ph/helpful-remaps)
@@ -212,7 +213,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4" default))
+   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22" "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4" default))
  '(package-selected-packages
    '(corfu embark evil lsp-java flycheck lsp-mode markdown-mode tree-sitter which-key vterm vertico typit typescript-mode tuareg tree-sitter-langs orderless nord-theme modus-themes marginalia magit lsp-ui helpful gruvbox-theme go-mode exec-path-from-shell elpher eglot ef-themes consult company)))
 (custom-set-faces
