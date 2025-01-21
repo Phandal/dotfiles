@@ -1,0 +1,13 @@
+theme = "everforest_light"
+
+[editor]
+line-number = "relative"
+cursorline = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.indent-guides]
+render = true
