@@ -4,7 +4,8 @@ source $VIMRUNTIME/defaults.vim
 " Turning Things On/Off
 set autoread
 set autowrite
-set background=dark
+" set background=dark
+set background=light
 set nobackup
 set clipboard=unnamedplus
 set completeopt=menuone,noselect,noinsert,preview
