@@ -6,6 +6,7 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nvim"
+alias hx="helix"
 
 alias ga="git add"
 alias gs="git status"
