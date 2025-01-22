@@ -6,7 +6,12 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nvim"
-alias hx="helix"
+
+osname=$(uname -s)
+if [ "$osname" != "Darwin" ]
+then
+  alias hx="helix"
+fi
 
 alias ga="git add"
 alias gs="git status"
