@@ -120,8 +120,8 @@
 (package-install 'gruvbox-theme)
 (package-install 'ef-themes)
 ;; (load-theme 'ef-elea-dark t nil)
-;; (load-theme 'everforest-hard-dark t nil)
-(load-theme 'everforest-hard-light t nil)
+(load-theme 'everforest-hard-dark t nil)
+;; (load-theme 'everforest-hard-light t nil)
 
 (package-install 'helpful)
 (ph/helpful-remaps)
