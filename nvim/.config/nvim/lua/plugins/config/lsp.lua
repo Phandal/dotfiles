@@ -6,8 +6,10 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist, opts)
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- Setup capabilities for nvim-cmp
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use an on_attach function to only map the following keys
@@ -67,7 +69,7 @@ require("neodev").setup({
   lspconfig = {
     cmd = { "lua-language-server" },
     on_attach = on_attach,
-    -- capabilities = capabilities,
+    capabilities = capabilities,
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150
@@ -98,7 +100,7 @@ require("neodev").setup({
 -- Apex Language Server
 lspconfig['apex_ls'].setup {
   on_attach = on_attach,
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -111,7 +113,7 @@ lspconfig['apex_ls'].setup {
 
 lspconfig['denols'].setup {
   on_attach = on_attach,
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -121,7 +123,7 @@ lspconfig['denols'].setup {
 
 lspconfig['ts_ls'].setup {
   on_attach = on_attach,
-  -- capabilities = capabilities,
+  capabilities = capabilities,
   flags = {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
@@ -149,7 +151,7 @@ local servers = {
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
-    -- capabilities = capabilities,
+    capabilities = capabilities,
     flags = {
       -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
