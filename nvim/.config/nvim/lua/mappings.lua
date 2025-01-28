@@ -10,7 +10,7 @@ function SwapBackgroundColor()
     newBackground = 'dark'
   end
   vim.opt.background = newBackground
-  print('Set background: ' .. newBackground)
+  vim.notify('Set background: ' .. newBackground)
 end
 
 -- General
@@ -34,8 +34,6 @@ set_key("n", "<LocalLeader>k", [[<CMD>lprev<CR>]], key_opts)
 
 -- FileTree specific
 set_key("n", "<C-n>", [[<CMD>Explore<CR>]], key_opts)
--- set_key("n", "<C-n>", [[<CMD>20Lexplore<CR>]], key_opts)
--- set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 
 -- Telescope specific
 set_key("n", "<Leader>bs", [[<CMD>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>]], key_opts)
