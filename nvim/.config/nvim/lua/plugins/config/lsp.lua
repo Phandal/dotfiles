@@ -1,40 +1,39 @@
 local lspconfig = require('lspconfig');
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', 'ge', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist, opts)
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
--- Setup capabilities for nvim-cmp
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  -- Enable autocomplete for versions that support it
+  if vim.version().minor >= 11 then
+    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  end
+
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'grD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'grd', vim.lsp.buf.definition, bufopts)
+  -- Mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, bufopts)
+  vim.keymap.set('n', '<Leader>qq', vim.diagnostic.setqflist, bufopts)
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  vim.keymap.set('n', '<Leader>rD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', '<Leader>rd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gri', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<Leader>ri', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, opts)
-  vim.keymap.set('n', 'gwa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', 'gwr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', 'gwl', function()
+  vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<Leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', 'grn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'grr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>F', vim.lsp.buf.format, bufopts)
-  vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, bufopts)
+  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<Leader>ra', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<Leader>rr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<Leader>F', vim.lsp.buf.format, bufopts)
+  vim.keymap.set('n', '<Leader>O', vim.lsp.buf.document_symbol, bufopts)
 
   -- AutoCommands
   local ph_lsp_augroup = vim.api.nvim_create_augroup("PH_LSP", { clear = false })
@@ -57,23 +56,31 @@ local on_attach = function(client, bufnr)
   end
 end
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.HINT] = " ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+      [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+    }
+  },
+})
 
 -- Setting up the `lua-language-server` with the lua-dev plugin
+---@diagnostic disable-next-line: missing-fields
 require("neodev").setup({
   -- add any options here, or leave empty to use the default settings
   lspconfig = {
     cmd = { "lua-language-server" },
     on_attach = on_attach,
     capabilities = capabilities,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150
-    },
     settings = {
       Lua = {
         runtime = {
@@ -101,10 +108,6 @@ require("neodev").setup({
 lspconfig['apex_ls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  flags = {
-    -- This will be the default in neovim 0.7+
-    debounce_text_changes = 150,
-  },
   filetypes = { 'apex' },
   apex_jar_path = os.getenv('APEX_LSP_PATH') .. '/apex-jorje-lsp.jar',
   apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
@@ -114,20 +117,12 @@ lspconfig['apex_ls'].setup {
 lspconfig['denols'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  flags = {
-    -- This will be the default in neovim 0.7+
-    debounce_text_changes = 150,
-  },
   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
 }
 
 lspconfig['ts_ls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  flags = {
-    -- This will be the default in neovim 0.7+
-    debounce_text_changes = 150,
-  },
   root_dir = lspconfig.util.root_pattern("package.json"),
   single_file_support = false,
 }
@@ -152,9 +147,5 @@ for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
   }
 end
