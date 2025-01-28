@@ -6,7 +6,6 @@ local usercmd = vim.api.nvim_create_user_command
 -- Options
 -- opt.autowrite = true
 opt.background = "dark"
--- opt.background = "light"
 opt.backup = false
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menuone,noselect,noinsert,preview"
@@ -53,21 +52,11 @@ g.maplocalleader = [[\]]
 -- File Browser Specific
 g.netrw_banner = 1
 g.netrw_liststyle = 0
--- g.netrw_browse_split = 4
 
 -- Custom Highlights
--- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { link = "Cursorline" })
--- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "Cursorline" })
--- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { link = "Visual" })
--- vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { link = "Visual" })
--- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { link = "Folded" })
--- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { link = "Folded" })
 
 -- Autocommands
 local ph_term_augroup = vim.api.nvim_create_augroup("PH_TERM", { clear = true })
-autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.number = false" })
-autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.relativenumber = false" })
-autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "lua vim.opt.signcolumn = 'no'" })
 autocmd("TermOpen", { pattern = "*", group = ph_term_augroup, command = "startinsert" })
 
 local ph_preview_augroup = vim.api.nvim_create_augroup("PH_PREVIEW", { clear = true })
