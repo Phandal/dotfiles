@@ -10,7 +10,7 @@ language-servers = [
 name = "typescript"
 auto-format = true
 language-servers = [
-  "typescript-language-server",
+  {name = "typescript-language-server", except-features = ["format"]},
   "vscode-eslint-language-server"
 ]
 
@@ -36,3 +36,31 @@ reportMissingTypeStubs = false
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
 autoImportCompletions = true
+
+[language-server.vscode-eslint-language-server]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-eslint-language-server.config]
+format = true
+validate = "on"
+experimental = { useFlatConfig = false }
+rulesCustomizations = []
+run = "onType"
+problems = { shortenToSingleLine = false }
+nodePath = ""
+
+[language-server.vscode-eslint-language-server.config.codeAction]
+[language-server.vscode-eslint-language-server.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.vscode-eslint-language-server.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.vscode-eslint-language-server.config.codeActionOnSave]
+enable = false
+mode = "fixAll"
+
+[language-server.vscode-eslint-language-server.config.workingDirectory]
+mode = "location"

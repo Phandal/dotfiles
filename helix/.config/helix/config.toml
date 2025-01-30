@@ -4,6 +4,9 @@ theme = "everforest_dark"
 line-number = "relative"
 cursorline = true
 
+[editor.lsp]
+display-progress-messages = true
+
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
