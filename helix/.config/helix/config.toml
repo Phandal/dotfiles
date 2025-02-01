@@ -1,6 +1,7 @@
 theme = "everforest_dark"
 
 [editor]
+true-color = true
 line-number = "relative"
 cursorline = true
 
