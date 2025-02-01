@@ -142,6 +142,7 @@ local servers = {
   'ocamllsp',
   'jdtls',
   'lwc_ls',
+  'zls',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
