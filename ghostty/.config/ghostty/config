@@ -1,11 +1,11 @@
 font-family = ""
 font-family = "FiraCode Nerd Font"
 theme = everforest-dark
-font-size = 9
+font-size = 12
 cursor-style = block
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
-window-decoration = none
+window-decoration = auto
 shell-integration-features = no-cursor,no-sudo,title
 macos-option-as-alt = true
