@@ -1,5 +1,6 @@
 font-family = ""
-font-family = "FiraCode Nerd Font"
+# font-family = "FiraCode Nerd Font"
+font-family = "Iosevka Nerd Font"
 theme = everforest-dark
 font-size = 12
 cursor-style = block

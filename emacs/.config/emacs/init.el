@@ -66,7 +66,8 @@
 (global-hl-line-mode 0)
 
 ;; Setting a few settings
-(setq default-frame-alist '((font . "FiraCode Nerd Font 12")))
+;; (setq default-frame-alist '((font . "FiraCode Nerd Font 12")))
+(setq default-frame-alist '((font . "Iosevka Nerd Font 12")))
 (setq-default display-line-numbers-type 'relative)
 (ph/line-numbers-hook)
 (setq-default indent-tabs-mode nil)
