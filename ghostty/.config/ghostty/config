@@ -17,6 +17,8 @@ window-padding-y = 0
 window-padding-balance = true
 window-decoration = none
 
+maximize = true
+
 resize-overlay = never
 
 shell-integration-features = no-cursor,no-sudo,title
@@ -24,3 +26,5 @@ shell-integration-features = no-cursor,no-sudo,title
 macos-option-as-alt = true
 
 gtk-adwaita=false
+
+config-file = ~/.config/ghostty-mac/config
