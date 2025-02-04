@@ -27,4 +27,4 @@ macos-option-as-alt = true
 
 gtk-adwaita=false
 
-config-file = ~/.config/ghostty-mac/config
+config-file = ?~/.config/ghostty-mac/config
