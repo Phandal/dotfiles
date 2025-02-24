@@ -220,13 +220,7 @@
    '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22"
      "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
      default))
- '(package-selected-packages
-   '(company consult corfu ef-themes elpher embark evil
-             exec-path-from-shell flycheck go-mode gruvbox-theme
-             helpful lsp-java lsp-mode lsp-ui magit marginalia
-             markdown-mode modus-themes nord-theme orderless
-             tree-sitter tree-sitter-langs tuareg typescript-mode
-             vertico vterm web-mode which-key zig-mode)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

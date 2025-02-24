@@ -6,6 +6,8 @@ alias cdown="cd ~/Downloads"
 alias cdocu="cd ~/Documents"
 alias cdeve="cd ~/Development"
 
+alias t="todo.sh"
+
 alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
