@@ -144,7 +144,7 @@
 (package-install 'lsp-java)
 
 (package-install 'web-mode)
-(setq web-mode-indent-offest 2)
+(setq web-mode-code-indent-offset 2)
 
 (package-install 'which-key)
 (which-key-mode t)
