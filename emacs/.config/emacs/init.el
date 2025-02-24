@@ -143,6 +143,9 @@
 
 (package-install 'lsp-java)
 
+(package-install 'web-mode)
+(setq web-mode-indent-offest 2)
+
 (package-install 'which-key)
 (which-key-mode t)
 
@@ -214,9 +217,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22" "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4" default))
+   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22"
+     "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
+     default))
  '(package-selected-packages
-   '(corfu embark evil lsp-java flycheck lsp-mode markdown-mode tree-sitter which-key vterm vertico typit typescript-mode tuareg tree-sitter-langs orderless nord-theme modus-themes marginalia magit lsp-ui helpful gruvbox-theme go-mode exec-path-from-shell elpher eglot ef-themes consult company)))
+   '(company consult corfu ef-themes elpher embark evil
+             exec-path-from-shell flycheck go-mode gruvbox-theme
+             helpful lsp-java lsp-mode lsp-ui magit marginalia
+             markdown-mode modus-themes nord-theme orderless
+             tree-sitter tree-sitter-langs tuareg typescript-mode
+             vertico vterm web-mode which-key zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
