@@ -7,9 +7,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable autocomplete for versions that support it
-  if vim.version().minor >= 11 then
-    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-  end
+  -- if vim.version().minor >= 11 then
+  --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  -- end
 
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   -- Mappings.
@@ -134,6 +134,7 @@ local servers = {
   'gopls',
   'lua_ls',
   'clangd',
+  'biome',
   -- 'tailwindcss',
   'html',
   'eslint',
