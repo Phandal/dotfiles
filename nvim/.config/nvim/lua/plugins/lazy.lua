@@ -1,11 +1,11 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -50,5 +50,25 @@ require('lazy').setup({
     dependencies = { 'saadparwaiz1/cmp_luasnip' } -- Completion Plugin to show snippets
   },
   'nanotee/luv-vimdocs',                          -- libuv docs in Neovim
-  { dir = '~/Development/suitecloud.nvim/main' }  -- Custom Work in progress
+  'MunifTanjim/nui.nvim',
+  {
+    'yetone/avante.nvim',                         -- AI
+    event = 'VeryLazy',
+    version = false,
+    build = 'make',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    {
+      -- Make sure to set this up properly if you have lazy=true
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {
+        file_types = { 'markdown', 'Avante' },
+      },
+      ft = { 'markdown', 'Avante' },
+    },
+  },
+  { dir = '~/Development/suitecloud.nvim/main' } -- Custom Work in progress
 })
