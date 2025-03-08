@@ -127,6 +127,12 @@ lspconfig['ts_ls'].setup {
   single_file_support = false,
 }
 
+lspconfig['elixirls'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { 'elixir-ls' },
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
