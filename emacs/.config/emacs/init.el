@@ -218,7 +218,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22" "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4" default))
+   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22"
+     "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
+     default))
  '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
