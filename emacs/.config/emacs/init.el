@@ -59,6 +59,7 @@
 ;; Turning a few things off
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Turning a few things on
 (delete-selection-mode 1)
@@ -66,8 +67,8 @@
 (global-hl-line-mode 0)
 
 ;; Setting a few settings
-;; (setq default-frame-alist '((font . "FiraCode Nerd Font 12")))
-(setq default-frame-alist '((font . "Iosevka Nerd Font 10")))
+;; (add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font 12"))
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10"))
 (setq-default display-line-numbers-type 'relative)
 (ph/line-numbers-hook)
 (setq-default indent-tabs-mode nil)
@@ -102,11 +103,12 @@
 (setq typescript-indent-level 2)
 
 ;; Mac Specific Settings
-(setq mac-command-modifier 'super)
-(setq mac-option-modifier 'meta)
-(unless (eq system-type 'darwin)
-  (menu-bar-mode -1)
-  (ph/swap-mac-modifiers))
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+(if (eq system-type 'darwin)
+  (and (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 12"))
+   (menu-bar-mode -1))
+())
 
 ;; ERC Specific Settings
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
