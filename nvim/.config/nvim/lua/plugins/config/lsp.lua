@@ -32,7 +32,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'grn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'grr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', 'gF', vim.lsp.buf.format, bufopts)
+  vim.keymap.set('n', 'grf', vim.lsp.buf.format, bufopts)
   vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, bufopts)
 
   -- AutoCommands
@@ -141,6 +141,7 @@ local servers = {
   'lua_ls',
   'clangd',
   'biome',
+  'gleam',
   -- 'tailwindcss',
   'html',
   'eslint',
