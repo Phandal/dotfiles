@@ -130,10 +130,17 @@
 (package-install 'helpful)
 (ph/helpful-remaps)
 
-(package-install 'tree-sitter)
-(package-install 'tree-sitter-langs)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;; (package-install 'tree-sitter)
+;; (package-install 'tree-sitter-langs)
+;; (global-tree-sitter-mode)
+;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(setq treesit-language-source-alist
+      '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")))
+
+(setq major-mode-remap-alist
+      '((typescript-mode . typescript-ts-mode)
+        (javascript-mode . javascript-ts-mode)))
 
 (package-install 'markdown-mode)
 
