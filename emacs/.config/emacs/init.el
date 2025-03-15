@@ -137,7 +137,8 @@
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
-        (gleam "https://github.com/gleam-lang/tree-sitter-gleam")))
+        (gleam "https://github.com/gleam-lang/tree-sitter-gleam")
+        (toml "https://github.com/tree-sitter/tree-sitter-toml")))
 
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
@@ -153,6 +154,10 @@
 (package-install 'go-mode)
 
 (package-install 'lsp-java)
+
+(package-install 'gleam-ts-mode)
+(add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
+(add-to-list 'eglot-server-programs '((gleam-ts-mode) "gleam" "lsp"))
 
 (package-install 'web-mode)
 (setq web-mode-code-indent-offset 2)
@@ -232,12 +237,11 @@
      "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
      default))
  '(package-selected-packages
-   '(company consult corfu ef-themes elpher embark evil
-             exec-path-from-shell flycheck go-mode gruvbox-theme
-             helpful lsp-java lsp-mode lsp-ui magit marginalia
-             markdown-mode modus-themes nord-theme orderless
-             tree-sitter-langs tuareg typescript-mode vertico vterm
-             web-mode which-key zig-mode)))
+   '(consult corfu ef-themes elpher embark evil exec-path-from-shell
+             flycheck go-mode gruvbox-theme helpful lsp-java lsp-mode
+             lsp-ui magit marginalia markdown-mode modus-themes
+             nord-theme orderless tuareg typescript-mode vertico vterm
+             web-mode which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
