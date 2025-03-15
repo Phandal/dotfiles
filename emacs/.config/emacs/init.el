@@ -90,7 +90,7 @@
 (setq inhibit-startup-screen t)
 (setq frame-resize-pixelwise t) ;; This is needed to allow the window to size by pixel instead of rounding to the nearest character
 (setq treesit-font-lock-level 4)
-(setq project-vc-extra-root-markers '("dune-project" "Makefile"))
+(setq project-vc-extra-root-markers '("dune-project" "Makefile" "gleam.toml"))
 
 ;; Org Specific Settings
 (with-eval-after-load "org"
@@ -136,7 +136,8 @@
 ;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")))
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (gleam "https://github.com/gleam-lang/tree-sitter-gleam")))
 
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
@@ -231,11 +232,12 @@
      "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
      default))
  '(package-selected-packages
-   '(consult corfu ef-themes elpher embark evil exec-path-from-shell
-             flycheck go-mode gruvbox-theme helpful lsp-java lsp-mode
-             lsp-ui magit marginalia markdown-mode modus-themes
-             nord-theme orderless tree-sitter tree-sitter-langs tuareg
-             typescript-mode vertico vterm web-mode which-key)))
+   '(company consult corfu ef-themes elpher embark evil
+             exec-path-from-shell flycheck go-mode gruvbox-theme
+             helpful lsp-java lsp-mode lsp-ui magit marginalia
+             markdown-mode modus-themes nord-theme orderless
+             tree-sitter-langs tuareg typescript-mode vertico vterm
+             web-mode which-key zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
