@@ -107,7 +107,7 @@
 (setq mac-option-modifier 'super)
 (if (eq system-type 'darwin)
   (and (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 12"))
-   (menu-bar-mode -1))
+   (menu-bar-mode 1))
 ())
 
 ;; ERC Specific Settings
@@ -142,7 +142,8 @@
 
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
-        (javascript-mode . javascript-ts-mode)))
+        (javascript-mode . javascript-ts-mode)
+        (conf-toml-mode . toml-ts-mode)))
 
 (package-install 'markdown-mode)
 
@@ -156,6 +157,7 @@
 (package-install 'lsp-java)
 
 (package-install 'gleam-ts-mode)
+(require 'gleam-ts-mode)
 (add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
 (add-to-list 'eglot-server-programs '((gleam-ts-mode) "gleam" "lsp"))
 
@@ -238,10 +240,10 @@
      default))
  '(package-selected-packages
    '(consult corfu ef-themes elpher embark evil exec-path-from-shell
-             flycheck go-mode gruvbox-theme helpful lsp-java lsp-mode
-             lsp-ui magit marginalia markdown-mode modus-themes
-             nord-theme orderless tuareg typescript-mode vertico vterm
-             web-mode which-key)))
+             flycheck gleam-ts-mode go-mode gruvbox-theme helpful
+             lsp-java lsp-mode lsp-ui magit marginalia markdown-mode
+             modus-themes nord-theme orderless tuareg typescript-mode
+             vertico vterm web-mode which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
