@@ -90,7 +90,7 @@
 (setq inhibit-startup-screen t)
 (setq frame-resize-pixelwise t) ;; This is needed to allow the window to size by pixel instead of rounding to the nearest character
 (setq treesit-font-lock-level 4)
-(setq project-vc-extra-root-markers '("dune-project" "Makefile"))
+(setq project-vc-extra-root-markers '("dune-project" "Makefile" "gleam.toml"))
 
 ;; Org Specific Settings
 (with-eval-after-load "org"
@@ -107,7 +107,7 @@
 (setq mac-option-modifier 'super)
 (if (eq system-type 'darwin)
   (and (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 12"))
-   (menu-bar-mode -1))
+   (menu-bar-mode 1))
 ())
 
 ;; ERC Specific Settings
@@ -136,11 +136,14 @@
 ;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")))
+        (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (gleam "https://github.com/gleam-lang/tree-sitter-gleam")
+        (toml "https://github.com/tree-sitter/tree-sitter-toml")))
 
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
-        (javascript-mode . javascript-ts-mode)))
+        (javascript-mode . javascript-ts-mode)
+        (conf-toml-mode . toml-ts-mode)))
 
 (package-install 'markdown-mode)
 
@@ -152,6 +155,11 @@
 (package-install 'go-mode)
 
 (package-install 'lsp-java)
+
+(package-install 'gleam-ts-mode)
+(require 'gleam-ts-mode)
+(add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
+(add-to-list 'eglot-server-programs '((gleam-ts-mode) "gleam" "lsp"))
 
 (package-install 'web-mode)
 (setq web-mode-code-indent-offset 2)
@@ -232,10 +240,10 @@
      default))
  '(package-selected-packages
    '(consult corfu ef-themes elpher embark evil exec-path-from-shell
-             flycheck go-mode gruvbox-theme helpful lsp-java lsp-mode
-             lsp-ui magit marginalia markdown-mode modus-themes
-             nord-theme orderless tree-sitter tree-sitter-langs tuareg
-             typescript-mode vertico vterm web-mode which-key)))
+             flycheck gleam-ts-mode go-mode gruvbox-theme helpful
+             lsp-java lsp-mode lsp-ui magit marginalia markdown-mode
+             modus-themes nord-theme orderless tuareg typescript-mode
+             vertico vterm web-mode which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
