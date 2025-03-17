@@ -178,9 +178,9 @@
 (package-install 'lsp-ui)
 (package-install 'flycheck)
 
-(add-hook 'typescript-mode-hook 'lsp-deferred)
-(add-hook 'c-mode-hook 'lsp-deferred)
-(add-hook 'java-mode-hook 'lsp-deferred)
+(add-hook 'typescript-ts-mode-hook 'lsp-deferred)
+(add-hook 'c-ts-mode-hook 'lsp-deferred)
+(add-hook 'java-ts-mode-hook 'lsp-deferred)
 
 ;; (package-install 'company)
 ;; (require 'company)
