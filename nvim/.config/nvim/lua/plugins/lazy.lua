@@ -51,24 +51,16 @@ require('lazy').setup({
   },
   'nanotee/luv-vimdocs',                          -- libuv docs in Neovim
   'MunifTanjim/nui.nvim',
-  {
-    'yetone/avante.nvim',                         -- AI
-    event = 'VeryLazy',
-    version = false,
-    build = 'make',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'stevearc/dressing.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-    -- {
-    --   -- Make sure to set this up properly if you have lazy=true
-    --   'MeanderingProgrammer/render-markdown.nvim',
-    --   opts = {
-    --     file_types = { 'markdown', 'Avante' },
-    --   },
-    --   ft = { 'markdown', 'Avante' },
-    -- },
-  },
+  -- {
+  --   'yetone/avante.nvim',                         -- AI
+  --   event = 'VeryLazy',
+  --   version = false,
+  --   build = 'make',
+  --   dependencies = {
+  --     'nvim-treesitter/nvim-treesitter',
+  --     'stevearc/dressing.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  -- },
   { dir = '~/Development/suitecloud.nvim/main' } -- Custom Work in progress
 })
