@@ -142,6 +142,7 @@ local servers = {
   'clangd',
   'biome',
   'gleam',
+  'elmls',
   -- 'tailwindcss',
   'html',
   'eslint',
