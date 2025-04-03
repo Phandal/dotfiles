@@ -18,6 +18,7 @@ emacs/.config/emacs/.cache
 emacs/.config/emacs/eclipse.jdt.ls
 emacs/.config/emacs/workspace
 emacs/.config/emacs/.dap-breakpoints
+emacs/.config/emacs/eshell/*
 
 # vim
 vim/.vim/.netrwhist
