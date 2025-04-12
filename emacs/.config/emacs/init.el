@@ -124,7 +124,7 @@
 (package-install 'gruvbox-theme)
 (package-install 'ef-themes)
 ;; (load-theme 'ef-elea-dark t nil)
-(load-theme 'everforest-hard-dark t nil)
+(load-theme 'everforest-hard-light t nil)
 ;; (load-theme 'everforest-hard-light t nil)
 
 (package-install 'helpful)
@@ -164,6 +164,7 @@
 (package-install 'gleam-ts-mode)
 (require 'gleam-ts-mode)
 (add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
+(add-hook 'gleam-ts-mode-hook 'eglot-ensure)
 (require 'eglot)
 (add-to-list 'eglot-server-programs '((gleam-ts-mode) "gleam" "lsp"))
 
@@ -241,7 +242,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22"
+   '("317754d03bb6d85b5a598480e1bbee211335bbf496d441af4992bbf1e777579e"
+     "671c79fc459f28077436448cef3b597064676ca2dc6b00f29f522a6137dd2c22"
      "a53c7ff4570e23d7c5833cd342c461684aa55ddba09b7788d6ae70e7645c12b4"
      default))
  '(package-selected-packages nil))
