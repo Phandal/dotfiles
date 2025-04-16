@@ -5,8 +5,8 @@ local usercmd = vim.api.nvim_create_user_command
 
 -- Options
 -- opt.autowrite = true
--- opt.background = "dark"
-opt.background = "light"
+opt.background = "dark"
+-- opt.background = "light"
 opt.backup = false
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menuone,noselect,noinsert,preview"

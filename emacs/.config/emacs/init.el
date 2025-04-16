@@ -123,9 +123,9 @@
 (package-install 'modus-themes)
 (package-install 'gruvbox-theme)
 (package-install 'ef-themes)
-;; (load-theme 'ef-elea-dark t nil)
-(load-theme 'everforest-hard-light t nil)
+;; (load-theme 'ef-elea-light t nil)
 ;; (load-theme 'everforest-hard-light t nil)
+(load-theme 'modus-operandi t nil)
 
 (package-install 'helpful)
 (ph/helpful-remaps)
