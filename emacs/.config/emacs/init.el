@@ -47,7 +47,7 @@
 
 (defun ph/line-numbers-hook ()
   "setup line numbers for certain text/programming modes"
-  (dolist (mode '(prog-mode-hook text-mode-ook conf-mode-hook fundamental-mode-hook))
+  (dolist (mode '(prog-mode-hook text-mode-hook conf-mode-hook fundamental-mode-hook))
     (add-hook mode (lambda () (display-line-numbers-mode 1)))))
 
 ;; Keymap Settings
