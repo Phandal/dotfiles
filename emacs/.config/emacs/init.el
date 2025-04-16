@@ -137,6 +137,7 @@
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
+        (html "https://github.com/tree-sitter/tree-sitter-html")
         (json "https://github.com/tree-sitter/tree-sitter-json")
         (gleam "https://github.com/gleam-lang/tree-sitter-gleam")
         (toml "https://github.com/tree-sitter/tree-sitter-toml")
@@ -148,6 +149,7 @@
       '((typescript-mode . typescript-ts-mode)
         (javascript-mode . javascript-ts-mode)
         (js-json-mode . json-ts-mode)
+        (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)))
 
 (package-install 'markdown-mode)
