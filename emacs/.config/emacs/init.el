@@ -147,7 +147,7 @@
 
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
-        (javascript-mode . javascript-ts-mode)
+        (javascript-mode . typescript-ts-mode)
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)))
