@@ -123,9 +123,9 @@
 (package-install 'modus-themes)
 (package-install 'gruvbox-theme)
 (package-install 'ef-themes)
-;; (load-theme 'ef-elea-light t nil)
+(load-theme 'ef-elea-dark t nil)
 ;; (load-theme 'everforest-hard-light t nil)
-(load-theme 'modus-operandi t nil)
+;; (load-theme 'modus-operandi t nil)
 
 (package-install 'helpful)
 (ph/helpful-remaps)
@@ -136,8 +136,10 @@
 ;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 (setq treesit-language-source-alist
       '((typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+        (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
         (javascript "https://github.com/tree-sitter/tree-sitter-javascript")
         (html "https://github.com/tree-sitter/tree-sitter-html")
+        (css "https://github.com/tree-sitter/tree-sitter-css")
         (json "https://github.com/tree-sitter/tree-sitter-json")
         (gleam "https://github.com/gleam-lang/tree-sitter-gleam")
         (toml "https://github.com/tree-sitter/tree-sitter-toml")
