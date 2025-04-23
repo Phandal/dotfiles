@@ -1,6 +1,7 @@
 export EDITOR="nvim"
 export PATH="$HOME/go/bin:$HOME/.local/bin:/usr/lib/node_modules:$HOME/.npm-global/bin:$HOME/.luarocks/bin:$HOME/.cargo/bin:$PATH"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 #
 # Nord
 # export BAT_THEME="Nord"
