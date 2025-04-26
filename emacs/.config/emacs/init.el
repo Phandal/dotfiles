@@ -13,13 +13,18 @@
         (conf-toml-mode . toml-ts-mode)))
 (pixel-scroll-precision-mode 1)
 (which-key-mode 1)
-(ido-mode 1)
+(icomplete-vertical-mode 1)
 (load-theme 'modus-operandi-tinted)
 (package-install 'corfu)
 (setq corfu-auto t)
 (add-hook 'eglot-managed-mode-hook 'corfu-mode)
 (package-install 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
+(package-install 'orderless)
+(setq completion-styles '(orderless basic)
+      completion-category-overrides '((file (styles basic partial-completion))))
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
