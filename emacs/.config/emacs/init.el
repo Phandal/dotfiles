@@ -3,6 +3,8 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 (setq visible-bell t)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 (setq-default truncate-lines t)
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (setq major-mode-remap-alist
@@ -13,7 +15,7 @@
         (conf-toml-mode . toml-ts-mode)))
 (pixel-scroll-precision-mode 1)
 (which-key-mode 1)
-(icomplete-vertical-mode 1)
+(fido-vertical-mode 1)
 (load-theme 'modus-operandi-tinted)
 (package-install 'corfu)
 (setq corfu-auto t)
