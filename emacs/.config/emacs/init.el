@@ -13,6 +13,9 @@
 ;; ef-themes is a collection of light and dark themes that are pretty and legible.
 (package-install 'ef-themes)
 
+;; magit is a better git client
+(package-install 'magit)
+
 ;; Appearance
 (load-theme 'ef-elea-dark t nil)
 
@@ -67,7 +70,7 @@
  '(custom-safe-themes
    '("d609d9aaf89d935677b04d34e4449ba3f8bbfdcaaeeaab3d21ee035f43321ff1"
      default))
- '(package-selected-packages '(corfu ef-themes exec-path-from-shell orderless)))
+ '(package-selected-packages '(corfu ef-themes exec-path-from-shell magit orderless)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
