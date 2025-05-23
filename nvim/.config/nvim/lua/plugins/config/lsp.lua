@@ -144,6 +144,7 @@ local servers = {
   'gleam',
   'elmls',
   -- 'tailwindcss',
+  'cmake',
   'html',
   'eslint',
   'pyright',
