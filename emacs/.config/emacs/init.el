@@ -25,6 +25,7 @@
 (add-hook 'eglot-managed-mode-hook 'corfu-mode)
 
 ;; Exec-path-from-shell
+(setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
 (exec-path-from-shell-initialize)
 
 ;; Orderless
@@ -70,7 +71,7 @@
  '(custom-safe-themes
    '("d609d9aaf89d935677b04d34e4449ba3f8bbfdcaaeeaab3d21ee035f43321ff1"
      default))
- '(package-selected-packages '(corfu ef-themes exec-path-from-shell magit orderless)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

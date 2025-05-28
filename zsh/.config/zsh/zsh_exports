@@ -25,6 +25,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 osname=$(uname -s)
 user=$(whoami)
+
+# JAVA
 if [ "$osname" = "Darwin" ]
 then
   if [ "$user" = "baileyfeldewerd" ]
@@ -46,3 +48,9 @@ export APEX_LSP_PATH="$HOME/.local/bin"
 
 # Docker
 DOCKER_AC_ZSH_SETUP_PATH="$HOME/.docker/autocompletions/zsh_setup" && test -f $DOCKER_AC_ZSH_SETUP_PATH && source $DOCKER_AC_ZSH_SETUP_PATH;
+
+# GNU programs on mac
+if [ "$osname" = "Darwin" ]
+then
+  export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+fi
