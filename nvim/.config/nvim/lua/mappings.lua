@@ -13,8 +13,21 @@ function SwapBackgroundColor()
   vim.notify('Set background: ' .. newBackground)
 end
 
+function SwapOutdoorsColor()
+  local currentBackground = vim.opt.background:get()
+  local newBackground
+  if (currentBackground == 'dark') then
+    vim.cmd('colorscheme github_light_high_contrast');
+    vim.opt.background = 'light';
+  else
+    vim.cmd('colorscheme everforest');
+    vim.opt.background = 'dark';
+  end
+end
+
 -- General
 set_key("n", "<F5>", [[<CMD>lua SwapBackgroundColor()<CR>]], key_opts)
+set_key("n", "<F6>", [[<CMD>lua SwapOutdoorsColor()<CR>]], key_opts)
 set_key("n", "<ESC>", [[<CMD>nohlsearch<CR>]], key_opts);
 
 -- Terminal Mode specific
