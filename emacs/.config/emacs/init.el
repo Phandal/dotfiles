@@ -41,6 +41,7 @@
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
 (setq display-line-numbers-type 'relative)
+(setq frame-resize-pixelwise t)
 (setq-default truncate-lines t)
 
 ;; Minor Mode Settings
