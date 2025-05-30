@@ -14,11 +14,15 @@ alias mv="mv -i"
 alias n="nvim"
 alias delta="delta --side-by-side"
 
+alias hx="helix"
+
 # Mac specific alias
 osname=$(uname -s)
 if [ "$osname" != "Darwin" ]
 then
-  alias hx="helix"
+  alias copy="xclip -sel clipboard"
+else
+  alias copy="pbcopy"
 fi
 
 # Git alias
