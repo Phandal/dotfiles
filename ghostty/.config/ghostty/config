@@ -1,10 +1,11 @@
 title = "Ghostty"
-theme = everforest-dark
+theme = GitHub-Dark-High-Contrast
+# theme = everforest-dark
 
 font-family = ""
 # font-family = "FiraCode Nerd Font"
 font-family = "Iosevka Nerd Font"
-font-size = 10
+font-size = 13
 
 adjust-cell-height = 0
 adjust-cell-width = 0
