@@ -88,6 +88,7 @@
 if vim.g.neovide then
   vim.cmd("colorscheme github_dark_default")
 else
-  vim.cmd("colorscheme everforest")
+  vim.cmd("colorscheme github_dark_high_contrast")
+  -- vim.cmd("colorscheme everforest")
   -- vim.cmd("colorscheme github_light_high_contrast")
 end
