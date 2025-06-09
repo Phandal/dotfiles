@@ -21,7 +21,7 @@
 (package-install 'lsp-mode)
 
 ;; Appearance
-(load-theme 'ef-elea-dark t nil)
+(load-theme 'modus-vivendi-deuteranopia t nil)
 
 ;; Package settings
 ;; Corfu
