@@ -37,6 +37,9 @@
 (setq completion-styles '(orderless basic)
       completion-category-overrides '((file (styles basic partial-completion))))
 
+;; Project
+(add-to-list 'project-vc-extra-root-markers "package.json")
+
 ;; Setting a few variables
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
