@@ -38,7 +38,8 @@
       completion-category-overrides '((file (styles basic partial-completion))))
 
 ;; Project
-(add-to-list 'project-vc-extra-root-markers "package.json")
+(with-eval-after-load 'project
+(add-to-list 'project-vc-extra-root-markers "package.json"))
 
 ;; Setting a few variables
 (setq make-backup-files nil)
@@ -69,6 +70,7 @@
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
         (javascript-mode . typescript-ts-mode)
+	(c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)))
