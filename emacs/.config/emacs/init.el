@@ -75,6 +75,10 @@
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)))
 
+;; Language Specific Settings
+;;;; Typescript
+(add-hook 'typescript-ts-base-mode-hook 'lsp-deferred)
+
 ;; Custom Set Stuff. I would like to know if I could turn this off somehow?
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
