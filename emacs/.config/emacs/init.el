@@ -20,6 +20,9 @@
 ;; lsp-mode is a better lsp client
 (package-install 'lsp-mode)
 
+;; Major Language Modes
+(package-install 'gleam-ts-mode)
+
 ;; Appearance
 (load-theme 'modus-vivendi-deuteranopia t nil)
 
@@ -51,6 +54,8 @@
 (setq ring-bell-function 'ignore)
 (setq display-line-numbers-type 'relative)
 (setq frame-resize-pixelwise t)
+(setq custom-file "~/.config/emacs-custom.el")
+(load-file custom-file)
 (setq-default truncate-lines t)
 
 ;; Minor Mode Settings
@@ -63,6 +68,7 @@
 
 ;; TreeSitter Settings
 ;;   Add filetypes to the list of modes recognized by emacs
+(setq treesit-font-lock-level 4)
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
 (add-to-list 'auto-mode-alist '("\\(?:CMakeLists\\.txt\\|\\.cmake\\)\\'" . cmake-ts-mode))
 
@@ -76,23 +82,8 @@
         (conf-toml-mode . toml-ts-mode)))
 
 ;; Language Specific Settings
+;;;; Programming
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
 ;;;; Typescript
 (add-hook 'typescript-ts-base-mode-hook 'lsp-deferred)
-
-;; Custom Set Stuff. I would like to know if I could turn this off somehow?
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("59c36051a521e3ea68dc530ded1c7be169cd19e8873b7994bfc02a216041bf3b"
-     "d609d9aaf89d935677b04d34e4449ba3f8bbfdcaaeeaab3d21ee035f43321ff1"
-     default))
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
