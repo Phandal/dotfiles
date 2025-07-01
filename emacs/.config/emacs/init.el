@@ -24,7 +24,7 @@
 (package-install 'gleam-ts-mode)
 
 ;; Appearance
-(load-theme 'modus-vivendi-deuteranopia t nil)
+(load-theme 'ef-owl t nil)
 
 ;; Package settings
 ;; Corfu
@@ -42,7 +42,8 @@
 
 ;; Project
 (with-eval-after-load 'project
-(add-to-list 'project-vc-extra-root-markers "package.json"))
+  (add-to-list 'project-vc-extra-root-markers "package.json")
+  (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
 ;; Setting a few variables
 (setq make-backup-files nil)
