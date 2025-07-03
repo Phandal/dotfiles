@@ -23,6 +23,7 @@
 
 ;; Major Language Modes
 (package-install 'gleam-ts-mode)
+(package-install 'ocaml-ts-mode)
 
 ;; Appearance
 (load-theme 'ef-owl t nil)
