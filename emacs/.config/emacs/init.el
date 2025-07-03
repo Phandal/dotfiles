@@ -19,6 +19,7 @@
 
 ;; lsp-mode is a better lsp client
 (package-install 'lsp-mode)
+(package-install 'lsp-pyright)
 
 ;; Major Language Modes
 (package-install 'gleam-ts-mode)
@@ -80,7 +81,8 @@
 	(c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
-        (conf-toml-mode . toml-ts-mode)))
+        (conf-toml-mode . toml-ts-mode)
+	(python-mode . python-ts-mode)))
 
 ;; Language Specific Settings
 ;;;; Programming
@@ -88,3 +90,6 @@
 
 ;;;; Typescript
 (add-hook 'typescript-ts-base-mode-hook 'lsp-deferred)
+
+;;;; Python
+(add-hook 'python-ts-mode-hook (lambda () (require 'lsp-pyright) (lsp-deferred)))
