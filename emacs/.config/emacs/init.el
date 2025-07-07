@@ -4,8 +4,36 @@
 
 ;; Corfu is used for completion in region. AKA autocomplete when typing
 (use-package corfu
-  :hook (lsp-mode . corfu-mode)
-  :config (setq cofu-auto t))
+  :init
+  (setq corfu-auto t
+	corfu-preview-current t)
+  :config
+  (global-corfu-mode))
+
+;; Corfu-Popupinfo is used to show documentation in the corfu candidate
+(use-package corfu-popupinfo
+  :ensure nil
+  :after corfu
+  :hook (corfu-mode . corfu-popupinfo-mode))
+
+;; Kind-icon adds icons to the Corfu popup
+(use-package kind-icon
+  :after corfu
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+;; Cape adds extra Capfs to the completions list
+(use-package cape
+  :bind ("C-c p" . cape-prefix-map)
+  :init
+  ;; Add to the global default value of `completion-at-point-functions' which is
+  ;; used by `completion-at-point'.  The order of the functions matters, the
+  ;; first function returning a result wins.  Note that the list of buffer-local
+  ;; completion functions takes precedence over the global list.
+  (add-hook 'completion-at-point-functions #'cape-keyword)
+  (add-hook 'completion-at-point-functions #'cape-line)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-elisp-block))
 
 ;; Exec-path-from-shell is used to load the environment variables from the shell.
 ;;   For exapmle, loading $MANPATH and $PATH
@@ -14,11 +42,25 @@
   (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
   (exec-path-from-shell-initialize))
 
+;; Vertico is a better vetical completion system
+(use-package vertico
+  :config (vertico-mode))
+
+;; Marginalia provides more info in the Vertico display
+(use-package marginalia
+  :config
+  (marginalia-mode))
+
 ;; Orderless is a backend used for completion functions such as corfu and fido
-(use-package orderless)
+(use-package orderless
+  :config
+  (setq completion-styles '(orderless basic)
+	completion-category-overrides '((file (styles basic partial-completion)))))
 
 ;; ef-themes is a collection of light and dark themes that are pretty and legible.
-(use-package ef-themes)
+(use-package ef-themes
+  :config
+  (load-theme 'ef-owl t nil))
 
 ;; magit is a better git client
 (use-package magit)
@@ -31,17 +73,9 @@
 (use-package gleam-ts-mode)
 (use-package ocaml-ts-mode)
 
-;; Appearance
-(load-theme 'ef-owl t nil)
-
-;; Package settings
-
-;; Orderless
-(setq completion-styles '(orderless basic)
-      completion-category-overrides '((file (styles basic partial-completion))))
-
-;; Project
-(with-eval-after-load 'project
+(use-package project
+:defer t
+:config
   (add-to-list 'project-vc-extra-root-markers "package.json")
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
@@ -56,8 +90,8 @@
 (setq display-line-numbers-type 'relative)
 (setq frame-resize-pixelwise t)
 (setq custom-file "~/.config/emacs-custom.el")
-(load-file custom-file)
 (setq-default truncate-lines t)
+(load-file custom-file)
 
 ;; Minor Mode Settings
 (tool-bar-mode -1)
@@ -65,7 +99,6 @@
 (menu-bar-mode -1)
 (pixel-scroll-precision-mode 1)
 (which-key-mode 1)
-(fido-vertical-mode 1)
 
 ;; TreeSitter Settings
 ;;   Add filetypes to the list of modes recognized by emacs
