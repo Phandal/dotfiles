@@ -40,6 +40,8 @@
   (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
   (exec-path-from-shell-initialize))
 
+(use-package vterm)
+
 ;; Vertico is a better vetical completion system
 (use-package vertico
   :config (vertico-mode))
