@@ -2,41 +2,38 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Corfu is used for completion in region. AKA autocomplete when typing
-(package-install 'corfu)
+(use-package corfu
+  :hook (lsp-mode . corfu-mode)
+  :config (setq cofu-auto t))
 
 ;; Exec-path-from-shell is used to load the environment variables from the shell.
 ;;   For exapmle, loading $MANPATH and $PATH
-(package-install 'exec-path-from-shell)
+(use-package exec-path-from-shell
+  :config
+  (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
+  (exec-path-from-shell-initialize))
 
 ;; Orderless is a backend used for completion functions such as corfu and fido
-(package-install 'orderless)
+(use-package orderless)
 
 ;; ef-themes is a collection of light and dark themes that are pretty and legible.
-(package-install 'ef-themes)
+(use-package ef-themes)
 
 ;; magit is a better git client
-(package-install 'magit)
+(use-package magit)
 
 ;; lsp-mode is a better lsp client
-(package-install 'lsp-mode)
-(package-install 'lsp-pyright)
+(use-package lsp-mode)
+(use-package lsp-pyright)
 
 ;; Major Language Modes
-(package-install 'gleam-ts-mode)
-(package-install 'ocaml-ts-mode)
+(use-package gleam-ts-mode)
+(use-package ocaml-ts-mode)
 
 ;; Appearance
 (load-theme 'ef-owl t nil)
 
 ;; Package settings
-;; Corfu
-(setq corfu-auto t)
-(add-hook 'eglot-managed-mode-hook 'corfu-mode)
-(add-hook 'lsp-mode-hook 'corfu-mode)
-
-;; Exec-path-from-shell
-(setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
-(exec-path-from-shell-initialize)
 
 ;; Orderless
 (setq completion-styles '(orderless basic)
