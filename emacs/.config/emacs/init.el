@@ -89,6 +89,8 @@
 (setq ring-bell-function 'ignore)
 (setq display-line-numbers-type 'relative)
 (setq frame-resize-pixelwise t)
+(setq gc-cons-threshold 100000000)
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (setq custom-file "~/.config/emacs-custom.el")
 (setq-default truncate-lines t)
 (load-file custom-file)
@@ -110,6 +112,7 @@
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
         (javascript-mode . typescript-ts-mode)
+	(js-mode . js-ts-mode)
 	(c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
@@ -122,6 +125,9 @@
 
 ;;;; Typescript
 (add-hook 'typescript-ts-base-mode-hook 'lsp-deferred)
+
+;;;; Javascript
+(setq js-indent-level 2)
 
 ;;;; Python
 (add-hook 'python-ts-mode-hook (lambda () (require 'lsp-pyright) (lsp-deferred)))
