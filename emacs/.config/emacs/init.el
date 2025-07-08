@@ -115,9 +115,7 @@
  )
 
 ;; ef-themes is a collection of light and dark themes that are pretty and legible.
-(use-package ef-themes
-  :config
-  (load-theme 'ef-owl t nil))
+(use-package ef-themes)
 
 ;; magit is a better git client
 (use-package magit)
@@ -135,6 +133,10 @@
 :config
   (add-to-list 'project-vc-extra-root-markers "package.json")
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
+
+;; Appearance
+(add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
+(load-theme 'everforest-hard-dark t nil)
 
 ;; Setting a few variables
 (setq make-backup-files nil)
