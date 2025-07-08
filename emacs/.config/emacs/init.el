@@ -137,6 +137,9 @@
 ;; Appearance
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 (load-theme 'everforest-hard-dark t nil)
+(set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
+(set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
+(set-face-attribute 'corfu-default nil :background 'unspecified :inherit 'default)
 
 ;; Setting a few variables
 (setq make-backup-files nil)
