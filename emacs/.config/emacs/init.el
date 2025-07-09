@@ -156,6 +156,7 @@
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (setq custom-file "~/.config/emacs-custom.el")
 (setq-default truncate-lines t)
+(setopt text-mode-ispell-word-completion nil)
 (load-file custom-file)
 
 ;; Minor Mode Settings
