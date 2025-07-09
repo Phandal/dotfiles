@@ -135,6 +135,7 @@
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
 ;; Appearance
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 (load-theme 'everforest-hard-dark t nil)
 (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
