@@ -1,9 +1,11 @@
 ;; Packages
+(require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq use-package-always-ensure t)
 
 ;; Corfu is used for completion in region. AKA autocomplete when typing
 (use-package corfu
+  :ensure t
   :init
   (setq corfu-auto t
 	corfu-preview-current nil)
