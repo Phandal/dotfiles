@@ -125,6 +125,7 @@
 ;; lsp-mode is a better lsp client
 (use-package lsp-mode)
 (use-package lsp-pyright)
+(use-package lsp-java)
 
 ;; Major Language Modes
 (use-package gleam-ts-mode)
@@ -179,6 +180,7 @@
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
         (javascript-mode . typescript-ts-mode)
+	(java-mode . java-ts-mode)
 	(js-mode . js-ts-mode)
 	(c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
