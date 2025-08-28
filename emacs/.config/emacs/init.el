@@ -200,3 +200,6 @@
 
 ;;;; Python
 (add-hook 'python-ts-mode-hook (lambda () (require 'lsp-pyright) (lsp-deferred)))
+
+;;;; Java
+(add-hook 'java-ts-mode (lambda () (require 'lsp-java) (lsp-deferred)))
