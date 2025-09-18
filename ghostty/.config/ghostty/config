@@ -26,6 +26,6 @@ shell-integration-features = no-cursor,no-sudo,title
 
 macos-option-as-alt = true
 
-# gtk-adwaita=false
+app-notifications = no-clipboard-copy
 
 config-file = ?~/.config/ghostty-mac/config
