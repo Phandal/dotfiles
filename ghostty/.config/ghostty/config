@@ -22,7 +22,7 @@ maximize = true
 
 resize-overlay = never
 
-shell-integration-features = no-cursor,no-sudo,title
+shell-integration-features = no-cursor,no-sudo,title,ssh-terminfo
 
 macos-option-as-alt = true
 
