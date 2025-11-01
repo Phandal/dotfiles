@@ -4,3 +4,6 @@
 [submodule "emacs/.config/emacs/everforest-theme"]
 	path = emacs/.config/emacs/everforest-theme
 	url = https://github.com/Theory-of-Everything/everforest-emacs.git
+[submodule "tmux/.config/tmux/plugins/tmux-mighty-scroll"]
+	path = tmux/.config/tmux/plugins/tmux-mighty-scroll
+	url = https://github.com/noscript/tmux-mighty-scroll.git
