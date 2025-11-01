@@ -7,3 +7,6 @@
 [submodule "tmux/.config/tmux/plugins/tmux-mighty-scroll"]
 	path = tmux/.config/tmux/plugins/tmux-mighty-scroll
 	url = https://github.com/noscript/tmux-mighty-scroll.git
+[submodule "vim/.vim/pack/git_plugins/start/fzf"]
+	path = vim/.vim/pack/git_plugins/start/fzf
+	url = https://github.com/junegunn/fzf.git
