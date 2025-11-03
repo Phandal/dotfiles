@@ -1,6 +1,6 @@
 " Make sure the defaults loaded
 source $VIMRUNTIME/defaults.vim
-
+			
 " Turning Things On/Off
 set autoread
 set autowrite
@@ -21,7 +21,8 @@ set ignorecase
 set incsearch
 set laststatus=2
 set list
-set listchars=tab:\ \ ,eol:󱞥,trail:·
+"set listchars=tab:\ \ ,eol:󱞥,trail:·
+set listchars=tab:│\ ,trail:·
 set mouse=a
 set number
 set omnifunc=syntaxcomplete#Complete
