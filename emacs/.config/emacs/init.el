@@ -119,6 +119,9 @@
 ;; ef-themes is a collection of light and dark themes that are pretty and legible.
 (use-package ef-themes)
 
+;;base16 themes is a collection of light and dark themes based on 16 colors
+(use-package base16-theme)
+
 ;; magit is a better git client
 (use-package magit)
 
@@ -140,7 +143,7 @@
 ;; Appearance
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
-(load-theme 'everforest-hard-dark t nil)
+(load-theme 'base16-black-metal-immortal t nil)
 (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
 (set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
 (set-face-attribute 'corfu-default nil :background 'unspecified :inherit 'default)

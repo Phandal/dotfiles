@@ -15,13 +15,17 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 #export FZF_DEFAULT_OPTS=' --color=fg:#f0f3f6,bg:#0a0c10,hl:#71b7ff --color=fg+:#d9dee3,bg+:#7a828e,hl+:#92cbff --color=info:#26cd4d,prompt:#ff9492,pointer:#cb9eff --color=marker:#4ae168,spinner:#ffb1af,header:#f0b72f'
 
 # Everforest
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#d3c6aa,fg+:#d4ccba,bg:#2d353b,bg+:#3d484d
-  --color=hl:#a7c080,hl+:#abbf8c,info:#d3c6aa,marker:#D3c6aa
-  --color=prompt:#a7c080,spinner:#7fbbb3,pointer:#7fbbb3,header:#dbbc7f
-  --color=border:#262626,label:#aeaeae,query:#d9d9d9
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+#   --color=fg:#d3c6aa,fg+:#d4ccba,bg:#2d353b,bg+:#3d484d
+#   --color=hl:#a7c080,hl+:#abbf8c,info:#d3c6aa,marker:#D3c6aa
+#   --color=prompt:#a7c080,spinner:#7fbbb3,pointer:#7fbbb3,header:#dbbc7f
+#   --color=border:#262626,label:#aeaeae,query:#d9d9d9
+#   --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+#   --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+
+# Black Metal (Immortal)
+export BAT_THEME=base16
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' --color=fg:#c1c1c1,bg:#000000,hl:#7799bb --color=fg+:#c1c1c1,bg+:#000000,hl+:#7799bb --color=info:#5f8787,prompt:#7799bb,pointer:#7799bb --color=marker:#5f8787,spinner:#5f8787,header:#5f8787'
 
 osname=$(uname -s)
 user=$(whoami)

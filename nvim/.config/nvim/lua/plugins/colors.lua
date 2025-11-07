@@ -1,9 +1,10 @@
 return {
   {
     'bradcush/nvim-base16',
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- vim.cmd('colorscheme base16-black-metal-immortal')
+      vim.cmd('colorscheme base16-black-metal-immortal')
     end,
   },
   {
@@ -11,7 +12,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colorscheme everforest')
+      -- vim.cmd('colorscheme everforest')
     end,
   }
 }
