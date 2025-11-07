@@ -1,2 +1,5 @@
-require('plugins.lazy')
-require('plugins.config')
+return {
+  {
+    "folke/lazy.nvim",
+  },
+}
