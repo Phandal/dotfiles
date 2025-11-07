@@ -35,6 +35,7 @@ opt.termguicolors = true
 opt.updatetime = 300
 opt.wildignorecase = true
 opt.wildoptions = "fuzzy,pum"
+opt.winborder = 'rounded'
 opt.wrap = false
 
 -- Global Variables
@@ -128,7 +129,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- Hover on under Cursor
-    if client:supports_method('textDocument/hover') then
+    if client:supports_method('textDocument/documentHighlight') then
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         group = vim.api.nvim_create_augroup('PH_LSP', { clear = false }),
         buffer = args.buf,
@@ -191,6 +192,7 @@ vim.diagnostic.config({
 vim.lsp.enable({
   'apex_ls',
   'ts_ls',
+  -- 'tsgo',
   'elixirls',
   'rust_analyzer',
   'gopls',
