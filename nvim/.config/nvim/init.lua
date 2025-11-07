@@ -88,14 +88,6 @@ set_key("n", "<ESC>", [[<CMD>nohlsearch<CR>]], key_opts);
 set_key("t", "<ESC>", [[<C-\><C-n>]], key_opts)
 set_key("n", "<Leader>tt", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
 set_key("n", "<Leader>tv", [[<CMD>vs<CR><CMD>term<CR>]], key_opts)
-set_key("n", "<Leader>j", [[<CMD>cnext<CR>]], key_opts)
-set_key("n", "<Leader>k", [[<CMD>cprev<CR>]], key_opts)
-set_key("n", "<Leader>qo", [[<CMD>copen<CR>]], key_opts)
-set_key("n", "<Leader>qc", [[<CMD>cclose<CR>]], key_opts)
-set_key("n", "<LocalLeader>j", [[<CMD>lnext<CR>]], key_opts)
-set_key("n", "<LocalLeader>k", [[<CMD>lprev<CR>]], key_opts)
-set_key("n", "<LocalLeader>lo", [[<CMD>lopen<CR>]], key_opts)
-set_key("n", "<LocalLeader>lc", [[<CMD>lclose<CR>]], key_opts)
 set_key("n", "<C-n>", [[<CMD>Explore<CR>]], key_opts)
 -- set_key("n", "<Leader>sd", [[<CMD>Suitecloud deploy<CR>]], key_opts)
 -- set_key("n", "<Leader>sp", [[<CMD>Suitecloud preview<CR>]], key_opts)
@@ -177,6 +169,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.diagnostic.config({
+  virtual_lines = {
+    current_line = true,
+  },
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = " ",
