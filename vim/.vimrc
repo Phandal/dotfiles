@@ -5,15 +5,14 @@ source $VIMRUNTIME/defaults.vim
 set autoread
 set autowrite
 set background=dark
-" set background=light
 set nobackup
 set clipboard=unnamedplus
-set completeopt=menuone,noselect,noinsert,preview
+set completeopt=fuzzy,menuone,noselect,noinsert,preview
 set cursorline
 set expandtab
-set fillchars=eob:\ ,vert:│
-set grepprg=rg\ --vimgrep
+set fillchars=eob:\ 
 set guicursor=n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20
+set grepprg=rg\ --vimgrep\ -uu
 set guioptions=aegit
 set hidden
 set hlsearch
@@ -21,7 +20,6 @@ set ignorecase
 set incsearch
 set laststatus=2
 set list
-"set listchars=tab:\ \ ,eol:󱞥,trail:·
 set listchars=tab:│\ ,trail:·
 set mouse=a
 set number
@@ -62,21 +60,12 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_underline = 1
-colorscheme everforest
+colorscheme base16-black-metal-immortal
 
 " File Browser Specific
-let g:netrw_banner = 1
-let g:netrw_liststyle = 0
+let g:netrw_liststyle = 1
 
 " Functions
-function SwapBackground()
-  if &background == "dark"
-    let &background="light"
-  else
-    let &background="dark"
-  endif
-endfunction
-
 function StatusLineMode()
   if &filetype ==# 'netrw'
     return 'NETRW'
@@ -102,7 +91,6 @@ endfunction
 
 " KeyMaps
 "   General
-nnoremap <f5> <CMD>call SwapBackground()<CR>
 nnoremap <ESC> <CMD>nohlsearch<CR>
 
 "   Terminal Mode Specific
@@ -121,7 +109,6 @@ nnoremap <LocalLeader>j <CMD>lnext<CR>
 nnoremap <LocalLeader>k <CMD>lprev<CR>
 
 "   File Tree
-" nnoremap <C-n> <CMD>20Lexplore<CR>
 nnoremap <C-n> <CMD>Explore<CR>
 
 "   FZF
