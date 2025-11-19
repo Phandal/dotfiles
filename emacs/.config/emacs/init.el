@@ -126,7 +126,8 @@
 (use-package magit)
 
 ;; lsp-mode is a better lsp client
-(use-package lsp-mode)
+(use-package lsp-mode
+  :init (setq-default lsp-format-buffer-on-save t))
 (use-package lsp-pyright)
 (use-package lsp-java)
 
@@ -144,9 +145,9 @@
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 (load-theme 'base16-black-metal-immortal t nil)
-(set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
-(set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
-(set-face-attribute 'corfu-default nil :background 'unspecified :inherit 'default)
+;; (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
+;; (set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
+;; (set-face-attribute 'corfu-default nil :background 'unspecified :inherit 'default)
 
 ;; Setting a few variables
 (setq make-backup-files nil)
