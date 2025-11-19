@@ -8,7 +8,7 @@
   :ensure t
   :init
   (setq corfu-auto t
-	corfu-preview-current nil)
+	      corfu-preview-current nil)
   :config
   (keymap-unset corfu-map "RET")
   (global-corfu-mode))
@@ -57,7 +57,7 @@
 (use-package orderless
   :config
   (setq completion-styles '(orderless basic)
-	completion-category-overrides '((file (styles basic partial-completion)))))
+	      completion-category-overrides '((file (styles basic partial-completion)))))
 
 ;; Consult allows for search and navigation commands with preview
 ;; Example configuration for Consult
@@ -135,8 +135,8 @@
 (use-package ocaml-ts-mode)
 
 (use-package project
-:defer t
-:config
+  :defer t
+  :config
   (add-to-list 'project-vc-extra-root-markers "package.json")
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
@@ -161,7 +161,9 @@
 (setq gc-cons-threshold 100000000)
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (setq custom-file "~/.config/emacs-custom.el")
+(setq-default indent-tabs-mode nil)
 (setq-default truncate-lines t)
+(setq-default tab-width 2)
 (setopt text-mode-ispell-word-completion nil)
 (load-file custom-file)
 
@@ -183,13 +185,13 @@
 (setq major-mode-remap-alist
       '((typescript-mode . typescript-ts-mode)
         (javascript-mode . typescript-ts-mode)
-	(java-mode . java-ts-mode)
-	(js-mode . js-ts-mode)
-	(c-mode . c-ts-mode)
+	      (java-mode . java-ts-mode)
+	      (js-mode . typescript-ts-mode)
+	      (c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)
-	(python-mode . python-ts-mode)))
+	      (python-mode . python-ts-mode)))
 
 ;; Language Specific Settings
 ;;;; Programming
