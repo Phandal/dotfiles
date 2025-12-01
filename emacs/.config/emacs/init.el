@@ -209,3 +209,13 @@
 
 ;;;; Java
 (add-hook 'java-ts-mode (lambda () (require 'lsp-java) (lsp-deferred)))
+
+;; Compilation Mode
+(require 'ansi-color)
+
+(defun ph/ansi-colorize-compilation-buffer ()
+  (when (eq major-mode 'compilation-mode)
+    (let ((inhibit-read-only t))
+      (ansi-color-apply-on-region compilation-filter-start (point)))))
+
+(add-hook 'compilation-filter-hook #'ph/ansi-colorize-compilation-buffer)
