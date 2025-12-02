@@ -127,9 +127,18 @@
 
 ;; lsp-mode is a better lsp client
 (use-package lsp-mode
-  :init (setq-default lsp-format-buffer-on-save t))
+  :init (setq-default lsp-format-buffer-on-save t)
+  :config
+  (setq lsp-signature-auto-activate t))
 (use-package lsp-pyright)
 (use-package lsp-java)
+
+(use-package flymake
+  :init
+  (setq flymake-show-diagnostics-at-end-of-line t)
+  :bind (
+         ("M-n" . flymake-goto-next-error)
+         ("M-p" . flymake-goto-prev-error)))
 
 ;; Major Language Modes
 (use-package gleam-ts-mode)
