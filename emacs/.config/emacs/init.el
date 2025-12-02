@@ -135,7 +135,7 @@
 
 (use-package flymake
   :init
-  (setq flymake-show-diagnostics-at-end-of-line t)
+  (setq flymake-show-diagnostics-at-end-of-line nil)
   :bind (
          ("M-n" . flymake-goto-next-error)
          ("M-p" . flymake-goto-prev-error)))
