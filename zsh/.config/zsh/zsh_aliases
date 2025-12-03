@@ -21,8 +21,10 @@ osname=$(uname -s)
 if [ "$osname" != "Darwin" ]
 then
   alias copy="xclip -sel clipboard"
+  alias paste="xclip -out"
 else
   alias copy="pbcopy"
+  alias paste="pbpaste"
 fi
 
 # Git alias
