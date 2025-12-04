@@ -201,6 +201,7 @@
         (js-json-mode . json-ts-mode)
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)
+        (lua-mode . lua-ts-mode)
 	      (python-mode . python-ts-mode)))
 
 ;; Language Specific Settings
