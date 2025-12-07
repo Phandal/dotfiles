@@ -148,10 +148,11 @@
   :defer t
   :config
   (add-to-list 'project-vc-extra-root-markers "package.json")
+  (add-to-list 'project-vc-extra-root-markers "compile_commands.json")
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
 ;; Appearance
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
+(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 (load-theme 'base16-black-metal-immortal t nil)
 ;; (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
