@@ -171,6 +171,7 @@
 (setq frame-resize-pixelwise t)
 (setq gc-cons-threshold 100000000)
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(setq scroll-conservatively 101)
 (setq custom-file "~/.config/emacs-custom.el")
 (setq-default indent-tabs-mode nil)
 (setq-default truncate-lines t)
