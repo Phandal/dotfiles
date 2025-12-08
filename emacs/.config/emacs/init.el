@@ -154,7 +154,8 @@
 ;; Appearance
 (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
-(load-theme 'base16-black-metal-immortal t nil)
+;; (load-theme 'base16-black-metal-immortal t nil)
+(load-theme 'base16-onedark t nil)
 ;; (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
 ;; (set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
 ;; (set-face-attribute 'corfu-default nil :background 'unspecified :inherit 'default)
