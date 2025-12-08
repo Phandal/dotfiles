@@ -141,6 +141,9 @@
          ("M-p" . flymake-goto-prev-error)))
 
 ;; Major Language Modes
+(use-package typescript-mode)
+(use-package cmake-mode)
+(use-package go-mode)
 (use-package gleam-ts-mode)
 (use-package ocaml-ts-mode)
 
@@ -189,10 +192,7 @@
 (which-key-mode 1)
 
 ;; TreeSitter Settings
-;;   Add filetypes to the list of modes recognized by emacs
 (setq treesit-font-lock-level 4)
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
-(add-to-list 'auto-mode-alist '("\\(?:CMakeLists\\.txt\\|\\.cmake\\)\\'" . cmake-ts-mode))
 
 ;;   Map specific modes to their tree sitter equivalents
 (setq major-mode-remap-alist
@@ -202,6 +202,7 @@
 	      (js-mode . typescript-ts-mode)
 	      (c-mode . c-ts-mode)
         (js-json-mode . json-ts-mode)
+        (go-mode . go-ts-mode)
         (mhtml-mode . html-ts-mode)
         (conf-toml-mode . toml-ts-mode)
         (lua-mode . lua-ts-mode)
@@ -222,6 +223,9 @@
 
 ;;;; Java
 (add-hook 'java-ts-mode (lambda () (require 'lsp-java) (lsp-deferred)))
+
+;;;; Go
+(setq go-ts-mode-indent-offset 2)
 
 ;; Compilation Mode
 (require 'ansi-color)
