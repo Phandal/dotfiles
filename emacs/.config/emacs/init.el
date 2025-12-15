@@ -127,7 +127,9 @@
 
 ;; lsp-mode is a better lsp client
 (use-package lsp-mode
-  :init (setq-default lsp-format-buffer-on-save t)
+  :init
+  (setq-default lsp-format-buffer-on-save t)
+  (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-signature-auto-activate t))
 (use-package lsp-pyright)
@@ -152,6 +154,7 @@
   :config
   (add-to-list 'project-vc-extra-root-markers "package.json")
   (add-to-list 'project-vc-extra-root-markers "compile_commands.json")
+  (add-to-list 'project-vc-extra-root-markers "go.mod")
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
 ;; Appearance
