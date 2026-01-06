@@ -39,7 +39,7 @@
 ;;   For exapmle, loading $MANPATH and $PATH
 (use-package exec-path-from-shell
   :config
-  (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH"))
+  (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH" "LSP_USE_PLISTS"))
   (exec-path-from-shell-initialize))
 
 (use-package vterm)
@@ -131,7 +131,9 @@
   (setq-default lsp-format-buffer-on-save t)
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-signature-auto-activate t))
+  (setq lsp-signature-auto-activate t)
+  (setq lsp-headerline-breadcrumb-enable nil)
+  :hook (lsp-mode . lsp-enable-which-key-integration))
 (use-package lsp-pyright)
 (use-package lsp-java)
 
@@ -177,8 +179,10 @@
 (setq display-line-numbers-type 'relative)
 (setq frame-resize-pixelwise t)
 (setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 1024 1024))
+(setq lsp-use-plists t)
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
-(setq scroll-conservatively 101)
+;;(setq scroll-conservatively 101)
 (setq custom-file "~/.config/emacs-custom.el")
 (setq-default indent-tabs-mode nil)
 (setq-default truncate-lines t)
