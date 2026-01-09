@@ -164,8 +164,10 @@
   (add-to-list 'project-vc-extra-root-markers "mix.exs"))
 
 ;; Appearance
-(add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
-(add-to-list 'default-frame-alist '(height . 110))
+(if (eq system-type 'darwin)
+    (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
+  (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10")))
+
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 ;; (load-theme 'base16-black-metal-immortal t nil)
 (load-theme 'base16-onedark t nil)
