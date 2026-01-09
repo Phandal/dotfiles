@@ -134,8 +134,12 @@
   (setq lsp-signature-auto-activate t)
   (setq lsp-headerline-breadcrumb-enable nil)
   :hook (lsp-mode . lsp-enable-which-key-integration))
-(use-package lsp-pyright)
-(use-package lsp-java)
+(use-package lsp-treemacs
+  :after lsp-mode)
+(use-package lsp-pyright
+  :after lsp-mode)
+(use-package lsp-java
+  :after lsp-mode)
 
 (use-package flymake
   :init
