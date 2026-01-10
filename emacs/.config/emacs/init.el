@@ -241,6 +241,9 @@
 ;;;; Go
 (setq go-ts-mode-indent-offset 2)
 
+;;;; C
+(add-hook 'c-ts-mode-hook 'lsp-deferred)
+
 ;; Compilation Mode
 (require 'ansi-color)
 
