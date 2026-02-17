@@ -14,7 +14,9 @@ alias mv="mv -i"
 alias n="nvim"
 alias delta="delta --side-by-side"
 
-alias hx="helix"
+if ! command -v hx > /dev/null 2>&1; then
+  alias hx="helix"
+fi
 
 # Mac specific alias
 osname=$(uname -s)
