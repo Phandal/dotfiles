@@ -152,8 +152,10 @@
 (use-package typescript-mode)
 (use-package cmake-mode)
 (use-package go-mode)
-(use-package gleam-ts-mode)
 (use-package ocaml-ts-mode)
+(use-package gleam-ts-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode)))
 
 (use-package project
   :defer t
