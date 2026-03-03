@@ -60,6 +60,7 @@
 	      completion-category-overrides '((file (styles basic partial-completion)))))
 
 ;; Consult allows for search and navigation commands with preview
+(use-package consult-flycheck)
 ;; Example configuration for Consult
 (use-package consult
   :bind (;; C-c bindings in `mode-specific-map'
@@ -81,7 +82,7 @@
          ("M-y" . consult-yank-pop)                ;; orig. yank-pop
          ;; M-g bindings in `goto-map'
          ("M-g e" . consult-compile-error)
-         ("M-g f" . consult-flymake)               ;; Alternative: consult-flycheck
+         ("M-g f" . consult-flycheck)               ;; Alternative: consult-flymake
          ("M-g g" . consult-goto-line)             ;; orig. goto-line
          ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
          ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
@@ -159,9 +160,12 @@
 
 (use-package flycheck
   :init
-  (global-flycheck-mode t))
+  (global-flycheck-mode t)
+  :bind (
+         ("M-n" . flycheck-next-error)
+         ("M-p" . flycheck-previous-error)))
 
-;; Major Language Modes
+;; major Language Modes
 (use-package typescript-mode)
 (use-package cmake-mode)
 (use-package go-mode)
