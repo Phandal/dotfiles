@@ -125,28 +125,41 @@
 ;; magit is a better git client
 (use-package magit)
 
+;; diff-hl shows git diffs in the gutter
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
 ;; lsp-mode is a better lsp client
 (use-package lsp-mode
   :init
   (setq-default lsp-format-buffer-on-save t)
   (setq lsp-keymap-prefix "C-c l")
+  (setq lsp-eldoc-render-all t)
   :config
   (setq lsp-signature-auto-activate t)
   (setq lsp-headerline-breadcrumb-enable nil)
   :hook (lsp-mode . lsp-enable-which-key-integration))
+
 (use-package lsp-treemacs
   :after lsp-mode)
+
 (use-package lsp-pyright
   :after lsp-mode)
+
 (use-package lsp-java
   :after lsp-mode)
 
-(use-package flymake
+;; (use-package flymake
+;;   :init
+;;   (setq flymake-show-diagnostics-at-end-of-line nil)
+;;   :bind (
+;;          ("M-n" . flymake-goto-next-error)
+;;          ("M-p" . flymake-goto-prev-error)))
+
+(use-package flycheck
   :init
-  (setq flymake-show-diagnostics-at-end-of-line nil)
-  :bind (
-         ("M-n" . flymake-goto-next-error)
-         ("M-p" . flymake-goto-prev-error)))
+  (global-flycheck-mode t))
 
 ;; Major Language Modes
 (use-package typescript-mode)
@@ -255,3 +268,6 @@
       (ansi-color-apply-on-region compilation-filter-start (point)))))
 
 (add-hook 'compilation-filter-hook #'ph/ansi-colorize-compilation-buffer)
+
+;; Enable Commands
+(put 'upcase-region 'disabled nil)
