@@ -151,6 +151,9 @@
 (use-package lsp-java
   :after lsp-mode)
 
+(use-package eldoc
+  :config (setq eldoc-display-functions '(eldoc-display-in-buffer)))
+
 ;; (use-package flymake
 ;;   :init
 ;;   (setq flymake-show-diagnostics-at-end-of-line nil)
@@ -215,6 +218,15 @@
 (setq-default tab-width 2)
 (setopt text-mode-ispell-word-completion nil)
 (load-file custom-file)
+
+;; Display Settings
+(add-to-list
+ 'display-buffer-alist
+ '("\\*eldoc.*\\*"
+   (display-buffer-in-side-window)
+   (side . bottom)
+   (slot . 0)
+   (window-height . 10)))
 
 ;; Minor Mode Settings
 (tool-bar-mode -1)
