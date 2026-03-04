@@ -263,6 +263,9 @@
 ;;;; C
 (add-hook 'c-ts-mode-hook 'lsp-deferred)
 
+;;; Gleam
+(add-hook 'gleam-ts-mode-hook 'lsp-deferred)
+
 ;; Compilation Mode
 (require 'ansi-color)
 
