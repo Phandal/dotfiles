@@ -226,7 +226,8 @@
    (display-buffer-in-side-window)
    (side . bottom)
    (slot . 0)
-   (window-height . 10)))
+   (window-height . 10)
+   (window-parameters . ((no-other-window . t) (no-delete-other-windows . t)))))
 
 ;; Minor Mode Settings
 (tool-bar-mode -1)
