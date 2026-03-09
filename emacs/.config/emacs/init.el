@@ -173,9 +173,8 @@
 (use-package cmake-mode)
 (use-package go-mode)
 (use-package ocaml-ts-mode)
-(use-package gleam-ts-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode)))
+(use-package elixir-ts-mode)
+(use-package gleam-ts-mode)
 
 (use-package project
   :defer t
@@ -278,6 +277,9 @@
 
 ;;; Gleam
 (add-hook 'gleam-ts-mode-hook 'lsp-deferred)
+
+;;; Elixir
+(add-hook 'elixir-ts-mode-hook 'lsp-deferred)
 
 ;; Compilation Mode
 (require 'ansi-color)
