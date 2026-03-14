@@ -4,9 +4,10 @@ title = "Ghostty"
 theme = Black Metal (Immortal)
 # theme = One Half Dark
 
-font-family = ""
+font-family = "Hack Nerd Font Mono"
+# font-family = "JetBrains Mono"
 # font-family = "FiraCode Nerd Font"
-font-family = "Iosevka Nerd Font"
+# font-family = "Iosevka Nerd Font"
 font-size = 10
 
 adjust-cell-height = 0
