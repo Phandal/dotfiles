@@ -186,12 +186,13 @@
 
 ;; Appearance
 (if (eq system-type 'darwin)
-    (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font"))
+    (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono"))
   ;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10")))
     (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 10")))
 
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
-(load-theme 'base16-black-metal-immortal t nil)
+(load-theme 'base16-twilight t nil)
+;; (load-theme 'base16-black-metal-immortal t nil)
 ;; (load-theme 'base16-onedark t nil)
 ;; (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
 ;; (set-face-attribute 'corfu-current nil :background 'unspecified :foreground 'unspecified :inherit 'diff-header :extend t)
