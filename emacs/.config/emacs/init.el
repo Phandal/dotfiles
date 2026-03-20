@@ -186,7 +186,7 @@
 
 ;; Appearance
 (if (eq system-type 'darwin)
-    (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono"))
+    (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 12"))
   ;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10")))
     (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 10")))
 
