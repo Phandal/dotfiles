@@ -4,7 +4,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local set_key = vim.api.nvim_set_keymap
 
 -- Options
-opt.autocopmlete = true
+opt.autocomplete = true
 opt.background = "dark"
 opt.clipboard = "unnamedplus"
 opt.completeopt = "fuzzy,menuone,noselect,noinsert,preview"
