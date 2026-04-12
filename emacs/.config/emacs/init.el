@@ -207,8 +207,6 @@
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
 (setq confirm-kill-emacs 'yes-or-no-p)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
 (setq display-line-numbers-type 'relative)
@@ -300,3 +298,15 @@
 
 ;; Enable Commands
 (put 'upcase-region 'disabled nil)
+
+;; Custom Minor Modes
+(define-minor-mode ph/mac-keyboard-mode
+  "Toggle ph/mac-keyboard-mode.
+If enabled, the keymaps for 'command' and 'option' are swapped."
+  :lighter ph/mkm
+  :global t
+  (if ph/mac-keyboard-mode
+      (setq mac-command-modifier 'meta
+            mac-option-modifier 'super)
+    (setq mac-command-modifier 'super
+          mac-option-modifier 'meta)))
