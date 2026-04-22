@@ -19,6 +19,13 @@
   :after corfu
   :hook (corfu-mode . corfu-popupinfo-mode))
 
+;; Corfu-Terminal is used to show popup in the terminal.
+(use-package corfu-terminal
+  :after corfu
+  :if (not (display-graphic-p))
+  :config
+  (corfu-terminal-mode))
+
 ;; Kind-icon adds icons to the Corfu popup
 (use-package kind-icon
   :after corfu
@@ -215,6 +222,7 @@
 (setq read-process-output-max (* 1024 1024))
 (setq lsp-use-plists t)
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(setq set-mark-command-repeat-pop t)
 ;;(setq scroll-conservatively 101)
 (setq custom-file "~/.config/emacs-custom.el")
 (setq-default indent-tabs-mode nil)
