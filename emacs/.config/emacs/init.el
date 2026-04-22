@@ -286,7 +286,8 @@
 (setq go-ts-mode-indent-offset 2)
 
 ;;;; C
-(add-hook 'c-ts-mode-hook 'lsp-deferred)
+;; (add-hook 'c-ts-mode-hook 'lsp-deferred)
+(add-hook 'c-ts-mode-hook 'eglot-ensure)
 
 ;;; Gleam
 (add-hook 'gleam-ts-mode-hook 'lsp-deferred)
@@ -310,7 +311,7 @@
 ;; Custom Minor Modes
 (define-minor-mode ph/mac-keyboard-mode
   "Toggle ph/mac-keyboard-mode.
-If enabled, the keymaps for 'command' and 'option' are swapped."
+If enabled, the keymaps for `command' and `option' are swapped."
   :lighter ph/mkm
   :global t
   (if ph/mac-keyboard-mode
