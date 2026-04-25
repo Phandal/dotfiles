@@ -60,34 +60,10 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_underline = 1
-colorscheme base16-black-metal-immortal
+colorscheme retrobox
 
 " File Browser Specific
 let g:netrw_liststyle = 1
-
-" Functions
-function StatusLineMode()
-  if &filetype ==# 'netrw'
-    return 'NETRW'
-  elseif &filetype ==# 'help'
-    return 'HELP'
-  else
-    let statusline_mode_map = {
-      \ 'n'      : 'NORMAL',
-      \ 'i'      : 'INSERT',
-      \ 'R'      : 'REPLACE',
-      \ 'v'      : 'VISUAL',
-      \ 'V'      : 'V-LINE',
-      \ "\<C-v>" : 'V-BLOCK',
-      \ 'c'      : 'COMMAND',
-      \ 's'      : 'SELECT',
-      \ 'S'      : 'S-LINE',
-      \ "\<C-s>" : 'S-BLOCK',
-      \ 't'      : 'TERMINAL'
-      \ }
-    return get(statusline_mode_map, mode())
-  endif
-endfunction
 
 " KeyMaps
 "   General
@@ -98,15 +74,15 @@ nnoremap <Leader>tt <CMD>10sp<CR><CMD>term<CR>
 nnoremap <Leader>tv <CMD>vs<CR><CMD>term<CR>
 
 "   Quickfix List Specific
-nnoremap <Leader>j <CMD>cnext<CR>
-nnoremap <Leader>k <CMD>cprev<CR>
+nnoremap ]q <CMD>cnext<CR>
+nnoremap [q <CMD>cprev<CR>
 nnoremap <Leader>qo <CMD>copen<CR>
 nnoremap <Leader>qc <CMD>cclose<CR>
 
 
 "   Location List Specific
-nnoremap <LocalLeader>j <CMD>lnext<CR>
-nnoremap <LocalLeader>k <CMD>lprev<CR>
+nnoremap ]Q <CMD>lnext<CR>
+nnoremap [Q <CMD>lprev<CR>
 
 "   File Tree
 nnoremap <C-n> <CMD>Explore<CR>
