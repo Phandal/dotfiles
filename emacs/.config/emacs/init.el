@@ -7,7 +7,7 @@
 (use-package corfu
   :ensure t
   :init
-  (setq corfu-auto t
+  (setq corfu-auto nil
 	      corfu-preview-current nil)
   :config
   (keymap-unset corfu-map "RET")
@@ -63,8 +63,10 @@
 ;; Orderless is a backend used for completion functions such as corfu and fido
 (use-package orderless
   :config
-  (setq completion-styles '(orderless basic)
-	      completion-category-overrides '((file (styles basic partial-completion)))))
+  (setq completion-styles '(orderless partial-completion basic)
+        completion-category-defaults nil
+        completion-categroy-overrides nil))
+	      ;; completion-category-overrides '((file (styles basic partial-completion)))))
 
 ;; Consult allows for search and navigation commands with preview
 (use-package consult-flycheck)
@@ -144,10 +146,17 @@
   (setq-default lsp-format-buffer-on-save t)
   (setq lsp-keymap-prefix "C-c l")
   (setq lsp-eldoc-render-all t)
+  (defun ph/lsp-mode-setup-completion ()
+    (setf (alist-get 'styles (alist-get 'lsp-capf completion-category-defaults))
+          '(orderless)));; Configure orderless for completions in lsp-completion
+  :custom
+  (lsp-completion-provider :none) ;; I use corfu
   :config
   (setq lsp-signature-auto-activate t)
   (setq lsp-headerline-breadcrumb-enable nil)
-  :hook (lsp-mode . lsp-enable-which-key-integration))
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration)
+  (lsp-completion-mode . ph/lsp-mode-setup-completion))
 
 (use-package lsp-treemacs
   :after lsp-mode)
