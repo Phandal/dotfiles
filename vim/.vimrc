@@ -5,6 +5,7 @@ source $VIMRUNTIME/defaults.vim
 set autoread
 set autowrite
 set background=dark
+set directory-=.
 set nobackup
 set clipboard=unnamedplus
 set completeopt=fuzzy,menuone,noselect,noinsert,preview

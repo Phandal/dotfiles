@@ -5,6 +5,7 @@ title = "Ghostty"
 # theme = One Half Dark
 theme = Twilight
 
+# font-family = "C64 Pro Mono"
 font-family = "Hack Nerd Font Mono"
 # font-family = "JetBrains Mono"
 # font-family = "FiraCode Nerd Font"
@@ -33,3 +34,6 @@ macos-option-as-alt = true
 app-notifications = no-clipboard-copy
 
 config-file = ?~/.config/ghostty-mac/config
+
+# custom-shader = ?~/.config/ghostty/shaders/bettercrt.glsl
+# custom-shader = ?~/.config/ghostty/shaders/bloom.glsl

@@ -207,9 +207,11 @@
 
 ;; Appearance
 (if (eq system-type 'darwin)
-    (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 14"))
+    (add-to-list 'default-frame-alist '(font . "C64 Pro Mono 10"))
+    ;; (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 14"))
   ;; (add-to-list 'default-frame-alist '(font . "Iosevka Nerd Font 10")))
-    (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 10")))
+  ;; (add-to-list 'default-frame-alist '(font . "Hack Nerd Font Mono 10")))
+  (add-to-list 'default-frame-alist '(font . "C64 Pro Mono 10")))
 
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
 (load-theme 'base16-twilight t nil)
