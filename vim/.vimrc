@@ -13,7 +13,7 @@ set cursorline
 set expandtab
 set fillchars=eob:\ 
 set guicursor=n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20
-set grepprg=rg\ --vimgrep\ -uu
+set grepprg=rg\ --vimgrep\ -uu\ '$*'
 set guioptions=aegit
 set hidden
 set hlsearch
