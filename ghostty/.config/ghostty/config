@@ -5,8 +5,8 @@ title = "Ghostty"
 # theme = One Half Dark
 theme = Twilight
 
-# font-family = "C64 Pro Mono"
-font-family = "Hack Nerd Font Mono"
+font-family = "C64 Pro Mono"
+# font-family = "Hack Nerd Font Mono"
 # font-family = "JetBrains Mono"
 # font-family = "FiraCode Nerd Font"
 # font-family = "Iosevka Nerd Font"
