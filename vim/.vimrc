@@ -61,7 +61,7 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 let g:nord_underline = 1
-colorscheme retrobox
+colorscheme base16-black-metal-khold
 
 " File Browser Specific
 let g:netrw_liststyle = 1

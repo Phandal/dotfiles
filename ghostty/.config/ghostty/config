@@ -3,10 +3,11 @@ title = "Ghostty"
 # theme = everforest-dark
 # theme = Black Metal (Immortal)
 # theme = One Half Dark
-theme = Twilight
+# theme = Twilight
+theme = Black Metal (Khold)
 
-font-family = "C64 Pro Mono"
-# font-family = "Hack Nerd Font Mono"
+# font-family = "C64 Pro Mono"
+font-family = "Hack Nerd Font Mono"
 # font-family = "JetBrains Mono"
 # font-family = "FiraCode Nerd Font"
 # font-family = "Iosevka Nerd Font"
