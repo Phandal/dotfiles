@@ -214,7 +214,8 @@
   ;; (add-to-list 'default-frame-alist '(font . "C64 Pro Mono 10")))
 
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "everforest-theme"))
-(load-theme 'base16-twilight t nil)
+(load-theme 'base16-black-metal-khold t nil)
+;; (load-theme 'base16-twilight t nil)
 ;; (load-theme 'base16-black-metal-immortal t nil)
 ;; (load-theme 'base16-onedark t nil)
 ;; (set-face-attribute 'corfu-border nil :background 'unspecified :inherit 'default)
