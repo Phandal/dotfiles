@@ -68,6 +68,17 @@
         completion-categroy-overrides nil))
 	      ;; completion-category-overrides '((file (styles basic partial-completion)))))
 
+;; Embark allows for minibuffer actions based on keymaps
+(use-package embark
+  :bind
+  (
+   ("C-." . embark-act)
+   ("C-;" . embark-dwim)
+   ("C-h B" . embark-bindings)))
+
+;; Embark-Consult lets embark work with Consult and gets auto-loaded by embark
+(use-package embark-consult)
+
 ;; Consult allows for search and navigation commands with preview
 (use-package consult-flycheck)
 ;; Example configuration for Consult
