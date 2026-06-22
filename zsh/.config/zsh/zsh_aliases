@@ -23,7 +23,7 @@ osname=$(uname -s)
 if [ "$osname" != "Darwin" ]
 then
   alias copy="xclip -sel clipboard"
-  alias paste="xclip -out"
+  alias paste="xclip -sel clipboard -out"
 else
   alias copy="pbcopy"
   alias paste="pbpaste"
