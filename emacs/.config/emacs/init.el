@@ -141,7 +141,11 @@
 (use-package ef-themes)
 
 ;;base16 themes is a collection of light and dark themes based on 16 colors
-(use-package base16-theme)
+(use-package base16-theme
+  :init
+  (setq base16-theme-distinct-fringe-background t
+        base16-theme-highlight-mode-line 'contrast
+        base16-theme-256-color-source 'colors))
 
 ;; magit is a better git client
 (use-package magit)
