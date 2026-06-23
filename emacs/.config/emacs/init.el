@@ -332,6 +332,23 @@
 
 (add-hook 'compilation-filter-hook #'ph/ansi-colorize-compilation-buffer)
 
+(defun ph/find-today-timesheet ()
+  "Find the today's timesheet if it exists."
+  (interactive)
+  
+  (let* ((now (current-time))
+         (year (format-time-string "%Y" now))
+         (dayofweek (string-to-number (format-time-string "%u" now)))
+         (monday (time-subtract now (days-to-time (1- dayofweek))))
+         (today-name (format-time-string "%m-%d-%y" now))
+         (week-dir-name (format-time-string "%m-%d-%y" monday))
+         (year-dir (expand-file-name year "~/Time"))
+         (week-dir (expand-file-name week-dir-name year-dir))
+         (today-file-name (expand-file-name (concat today-name ".org") week-dir)))
+    (find-file today-file-name)))
+
+(global-set-key (kbd "C-c t") #'ph/find-today-timesheet)
+
 ;; Enable Commands
 (put 'upcase-region 'disabled nil)
 
