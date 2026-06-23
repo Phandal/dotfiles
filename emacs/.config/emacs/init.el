@@ -44,7 +44,7 @@
 ;;   For exapmle, loading $MANPATH and $PATH
 (use-package exec-path-from-shell
   :config
-  (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH" "LSP_USE_PLISTS"))
+  (setq exec-path-from-shell-variables '("ZDOTDIR" "PATH" "MANPATH" "LSP_USE_PLISTS" "SSH_AUTH_SOCK"))
   (exec-path-from-shell-initialize))
 
 (use-package vterm)
@@ -53,6 +53,9 @@
   :if (not (display-graphic-p))
   :config
   (xclip-mode 1))
+
+(use-package kkp
+  :hook (tty-setup . global-kkp-mode))
 
 ;; Vertico is a better vetical completion system
 (use-package vertico
