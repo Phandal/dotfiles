@@ -5,7 +5,6 @@
 
 ;; Corfu is used for completion in region. AKA autocomplete when typing
 (use-package corfu
-  :ensure t
   :init
   (setq corfu-auto nil
 	      corfu-preview-current nil)
@@ -15,7 +14,6 @@
 
 ;; Corfu-Popupinfo is used to show documentation in the corfu candidate
 (use-package corfu-popupinfo
-  :ensure nil
   :after corfu
   :hook (corfu-mode . corfu-popupinfo-mode))
 
@@ -50,6 +48,11 @@
   (exec-path-from-shell-initialize))
 
 (use-package vterm)
+
+(use-package xclip
+  :if (not (display-graphic-p))
+  :config
+  (xclip-mode 1))
 
 ;; Vertico is a better vetical completion system
 (use-package vertico
@@ -275,6 +278,7 @@
 (pixel-scroll-precision-mode 1)
 (delete-selection-mode 1)
 (which-key-mode 1)
+(xterm-mouse-mode 1)
 
 ;; TreeSitter Settings
 (setq treesit-font-lock-level 4)
