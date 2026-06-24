@@ -272,7 +272,7 @@
    (side . bottom)
    (slot . 0)
    (window-height . 10)
-   (window-parameters . ((no-other-window . t) (no-delete-other-windows . t)))))
+   (window-parameters . ((no-other-window . t)))))
 
 ;; Minor Mode Settings
 (tool-bar-mode -1)
