@@ -12,6 +12,7 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nvim"
+alias em="emacsclient -nw"
 alias delta="delta --side-by-side"
 
 if ! command -v hx > /dev/null 2>&1; then
