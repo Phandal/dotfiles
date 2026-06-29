@@ -15,6 +15,7 @@
 
 ;; Corfu-Popupinfo is used to show documentation in the corfu candidate
 (use-package corfu-popupinfo
+  :ensure corfu
   :after corfu
   :hook (corfu-mode . corfu-popupinfo-mode))
 
