@@ -12,6 +12,8 @@ alias cp="cp -i"
 alias rm="rm -i"
 alias mv="mv -i"
 alias n="nvim"
+alias nvim="hx"
+alias vim="hx"
 alias em="emacsclient -nw"
 alias delta="delta --side-by-side"
 
