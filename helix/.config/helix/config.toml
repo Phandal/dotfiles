@@ -1,4 +1,6 @@
-theme = "base16_transparent"
+# theme = "base16_transparent"
+# theme = "ayu_mirage"
+theme = "base16_terminal"
 
 [editor]
 true-color = true

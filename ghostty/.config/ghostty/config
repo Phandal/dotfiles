@@ -4,7 +4,8 @@ title = "Ghostty"
 # theme = Black Metal (Immortal)
 # theme = One Half Dark
 # theme = Twilight
-theme = Black Metal (Khold)
+# theme = Black Metal (Khold)
+theme = Ayu Mirage
 
 # font-family = "C64 Pro Mono"
 font-family = "Hack Nerd Font Mono"
