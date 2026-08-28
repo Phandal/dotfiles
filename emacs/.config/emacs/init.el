@@ -20,13 +20,6 @@
   :after corfu
   :hook (corfu-mode . corfu-popupinfo-mode))
 
-;; Corfu-Terminal is used to show popup in the terminal.
-(use-package corfu-terminal
-  :after corfu
-  :if (not (display-graphic-p))
-  :config
-  (corfu-terminal-mode))
-
 ;; Kind-icon adds icons to the Corfu popup
 (use-package kind-icon
   :after corfu
