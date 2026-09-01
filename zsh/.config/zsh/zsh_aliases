@@ -19,8 +19,6 @@ alias delta="delta --side-by-side"
 
 alias zz='cd $(z | fzf | awk "{print \$2}")'
 
-alias agents='claude agents'
-
 if ! command -v hx > /dev/null 2>&1; then
   alias hx="helix"
 fi
