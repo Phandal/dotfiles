@@ -53,6 +53,7 @@ local menu        = "hyprlauncher"
 hl.on("hyprland.start", function () 
   hl.exec_cmd("hyprpaper")
   hl.exec_cmd("emacs --daemon")
+  hl.exec_cmd("ashell")
 end)
 
 
@@ -278,18 +279,26 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("emacsclient -nc"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("F11", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + k",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j",  hl.dsp.focus({ direction = "down" }))
+
+-- Master Keybinds
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("mfact -0.1"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.layout("mfact +0.1"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.layout("mfact exact 0.5"))
+hl.bind(mainMod .. " + RETURN", hl.dsp.layout("swapwithmaster auto"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
