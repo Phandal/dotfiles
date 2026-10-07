@@ -15,7 +15,7 @@ font-family = "Hack Nerd Font Mono"
 font-size = 10
 
 adjust-cell-height = 0
-adjust-cell-width = -1
+adjust-cell-width = 0
 
 cursor-style = block
 adjust-cursor-height = 0
