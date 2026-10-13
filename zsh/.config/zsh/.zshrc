@@ -1,3 +1,6 @@
+# For profiling
+#zmodload zsh/zprof
+
 # Sourcing
 source $ZDOTDIR/zsh_aliases
 source $ZDOTDIR/zsh_exports
@@ -27,3 +30,6 @@ fi
 
 # opam configuration
 [[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# For profiling
+# zprof

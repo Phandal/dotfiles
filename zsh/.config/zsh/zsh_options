@@ -1,5 +1,12 @@
 autoload -Uz compinit colors vcs_info
-compinit
+
+# Only rebuild completion cache once per day
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' $ZDOTDIR/.zcompdump 2>/dev/null)" ]; then
+	compinit
+else
+	compinit -C
+fi
+
 colors
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
