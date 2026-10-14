@@ -1,11 +1,11 @@
 title = "Ghostty"
 # theme = GitHub-Dark-High-Contrast
 # theme = everforest-dark
-# theme = Black Metal (Immortal)
+theme = Black Metal (Immortal)
 # theme = One Half Dark
 # theme = Twilight
 # theme = Black Metal (Khold)
-theme = Ayu Mirage
+# theme = Ayu Mirage
 
 # font-family = "C64 Pro Mono"
 font-family = "Hack Nerd Font Mono"
